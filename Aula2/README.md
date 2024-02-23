@@ -62,3 +62,49 @@ Menor (<), Menor o igual (<=), Mayor (>), Mayor o igual (>=), Diferente (!=), Ig
 
 Las operaciones bitwise son aquellas que permiten realizar operaciones bit a bit, tales como: suma booleana “or” (|), multiplicación booleana “and” (&), negación “not” (~), disyunción exclusiva “xor” (^) y desplazamiento (<< ó >>).
 
+```c
+uint8_t a, b, c, d, e, f, g, h, i;
+a = 0b01011100; //0x5C
+b = 0b10111010; //0xBA
+c = a & b; //0b00011000 = 0x18
+d = a | b; //0b11111110 = 0xFE
+e = ~a; //0b10100011 = 0xA3
+f = ~b; //0b01000101 = 0x45
+g = a ^ b; //0b11100110 = 0xE6
+h = a << 3; //0b11100000 = 0xE0
+i = b >> 2; //0b00101110 = 0x2E
+```
+
+Uniendo diferentes operaciones bitwise
+
+```c
+uint8_t data = 0x00;
+
+data |= (0x01<<4); //0b00000000 | 0b00010000
+                   //0b00010000
+data &= ~(0x01<<4);
+```
+
+<h2>Condicionales</h2>
+
+```c
+
+```
+
+<h2>Bucles o ciclos</h2>
+
+```c
+
+```
+
+<h2>Arreglos</h2>
+
+```c
+
+```
+
+<h2>Funciones</h2>
+
+```c
+
+```
