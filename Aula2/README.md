@@ -44,4 +44,21 @@ uint16_t p = 0xF15E;
 int32_t q = 0x0000FFFF;
 uint64_t r = 0x0000000000000001;
 ```
+![int4_t y uint4_t](image-2.png)
+
+<h2>Operaciones</h2>
+
+<h3>Operaciones aritméticas</h3> 
+
+Suma (+), Resta (-), Multiplicación (*), División (/) y Módulo (%).
+
+![División](image-3.png)
+
+<h3>Operaciones lógicas</h3> 
+
+Menor (<), Menor o igual (<=), Mayor (>), Mayor o igual (>=), Diferente (!=), Igual (==), And (&&), OR (||) y Negación (!).
+
+<h3>Bitwise</h3>
+
+Las operaciones bitwise son aquellas que permiten realizar operaciones bit a bit, tales como: suma booleana “or” (|), multiplicación booleana “and” (&), negación “not” (~), disyunción exclusiva “xor” (^) y desplazamiento (<< ó >>).
 
