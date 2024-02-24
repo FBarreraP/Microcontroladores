@@ -82,10 +82,15 @@ uint8_t data = 0x00;
 
 data |= (0x01<<4); //0b00000000 | 0b00010000
                    //0b00010000
-data &= ~(0x01<<4);
+data &= ~(0x01<<4); //0b00010000 & ~(0b00010000)
+                    //0b00010000 & 0b11101111
+                    //0b00000000
 ```
 
 <h2>Condicionales</h2>
+
+Los condicionales permiten establecer condiciones internamente en el programa. Algunos condicionales son: (a) if-else, (b) if-else anidados y (c) switch-case.
+
 
 ```c
 
