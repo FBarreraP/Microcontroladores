@@ -105,7 +105,6 @@ if(a == 1){
 
 C
 ```c
-//C
 int a = 2;
 if(a == 1){
     printf("El valor de 'a' es igual a 1 \n");
@@ -117,26 +116,260 @@ if(a == 1){
 
 <h3>if-else anidados</h3>
 
+C++
+```c++
+int a = 2, b = 4, c = 3;
+if(a > b){
+    if(b > c){
+        cout<<"a>b>c"<<endl;
+    }else{
+        cout<<"a>c>b"<<endl;
+    }
+}else if(a > c){
+    cout<<"b>a>c"<<endl;
+}else if(b > c){
+    cout<<"b>c>a"<<endl;
+}else{
+    cout<<"c>b>a"<<endl;
+}
+```
 
+C
+```c
+int a = 2, b = 4, c = 3;
+if(a > b){
+    if(b > c){
+        printf("a>b>c \n");
+    }else{
+        printf("a>c>b \n");
+    }
+}else if(a > c){
+    printf("b>a>c \n");
+}else if(b > c){
+    printf("b>c>a \n");
+}else{
+    printf("c>b>a \n");
+}
+```
 
 <h3>switch-case</h3>
 
+C++
+```c++
+int calificacion = 3;
+switch(calificacion){
+    case 5:
+        cout<<"Excelente"<<endl;
+        break;
+    case 4:
+        cout<<"Bien hecho"<<endl;
+        break;
+    case 3:
+        cout<<"Aceptable"<<endl;
+        break;
+    case 2:
+        cout<<"Intente de nuevo"<<endl;
+        break;
+    case 1:
+        cout<<"Muy mal"<<endl;
+        break;
+    default:
+        cout<<"Calificación inválida"<<endl;
+}
+```
 
+C
+```c
+int calificacion = 3;
+switch(calificacion){
+    case 5:
+        printf("Excelente \n");
+        break;
+    case 4:
+        printf("Bien hecho \n");
+        break;
+    case 3:
+        printf("Aceptable \n");
+        break;
+    case 2:
+        printf("Intente de nuevo \n");
+        break;
+    case 1:
+        printf("Muy mal \n");
+        break;
+    default:
+        printf("Calificación inválida \n");
+}
+```
 
 <h2>Bucles o ciclos</h2>
 
-```c
+Los ciclos permiten hacer repeticiones de una o varias instrucción de código en un programa. Algunos bucles son: (a) for, (b) while y (c) do-while.
 
+
+<h3>for</h3>
+
+C
+```c
+float a;
+int i;
+for(i = 0; i <= 3; i++){
+    printf("Ingrese el número %d \n", i+1);
+    scanf("%f", &a);
+    printf("El número ingresado es: %f \n", a);
+}
+```
+
+C++
+```c++
+float a;
+int i;
+for(i = 0; i <= 3; i++){
+    cout<<"Ingrese el número"<<i+1<<endl;
+    cin>>a;
+    cout<<"El número ingresado es:"<<a<<endl;
+}
+```
+
+<h3>while</h3>
+
+C
+```c
+clock_t t1, t2;
+t1 = clock();
+t2 = 0;
+while(t < 2000){
+    printf("El tiempo es %d ms \n", t2);
+    t2 = clock() - t1;
+}
+```
+
+C++
+```c++
+clock_t t1, t2;
+t1 = clock();
+t2 = 0;
+while(t < 2000){
+    cout<<"El tiempo es"<<t2<<"ms"<<endl;
+    t2 = clock() - t1;
+}
+```
+
+<h3>do-while</h3>
+
+C
+```c
+clock_t t1, t2;
+t1 = clock();
+t2 = 0;
+do{
+    printf("El tiempo es %d ms \n", t2);
+    t2 = clock() - t1;
+}while(t < 2000);
+```
+
+C++
+```c++
+clock_t t1, t2;
+t1 = clock();
+t2 = 0;
+do{
+    cout<<"El tiempo es"<<t2<<"ms"<<endl;
+    t2 = clock() - t1;
+}while(t < 2000);
 ```
 
 <h2>Arreglos</h2>
 
+Los arreglos (arrays) son de tamaño fijo y permiten almacenar información secuencial de elementos (números, caracteres, etc.) del mismo tipo. Existen dos tipos de arreglos, unidimensionales (vectores) y los multidimensionales (matrices 2D o 3D).
+
+Sintaxis de declaración
+```
+tipo NombreVector[Tamaño];
+tipo NombreMatriz[TamañoFila][TamañoColumna];
+```
+
+El objetivo es accesar de una manera más flexible y sencilla a una cantidad considerable de información:
+
+```c
+int num1, num2, num3, num4, num5, num6;
+int nums[6];
+int nums1[2][3], num2[3][2];
+```
+
+Inicialización
+
+```c
+int num1 = 22, num2 = 3, num3 = 100, num4 = 45, num5 = 81, num6 = 1492;
+
+int nums[6] = {22, 3, 100, 45, 81, 1492};
+
+int nums1[2][3] = {{22, 3, 100},
+                   {45, 81, 1492}};
+
+int num2[3][2] = {{22, 3}, 
+                  {100, 45}, 
+                  {81, 1492}};
+```
+
+![Arreglos con index](image-4.png)
+
+Los arreglos (arrays) permiten almacenar y obtener información en una única variable utilizando un índice (<i>index</i>), siendo el índice '0' la posición inicial de los vectores y matrices.
+
+<h3>Vectores</h3>
+
+C
+```c
+float data[3];
+int i;
+for(i = 0; i <= 2; i++){
+    printf("Ingrese el número %d \n", i+1);
+    scanf("%f", &data[i]);
+    printf("El número ingresado en la posición [%d] del vector, es: %f \n", i, data[i]);
+}
+```
+
+C++
+```c++
+float data[3];
+int i;
+for(i = 0; i <= 2; i++){
+    cout<<"Ingrese el número "<<i+1<<endl;
+    scanf("%f", &data[i]);
+    cout<<"El número ingresado en la posición ["<<i<<"] del vector, es: "<<data[i]<<endl;
+}
+```
+
+<h3>Matrices</h3>
+
+C
+```c
+float data[2][2];
+int i;
+int cont = 0;
+for(i = 0; i <= 1; i++){ //filas
+    for(j = 0; j <= 1; j++){ //columnas
+        printf("Ingrese el número %d \n", cont++);
+        scanf("%f", &data[i]);
+        printf("El número ingresado en la posición [%d][%d] del vector, es: %f \n", i, data[i]);
+    }
+}
+```
+
+C++
+```c++
+
+```
+
+
+<h2>Funciones</h2>
+
+C
 ```c
 
 ```
 
-<h2>Funciones</h2>
-
-```c
+C++
+```c++
 
 ```
