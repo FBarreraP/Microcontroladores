@@ -16,6 +16,8 @@ Los números binarios tienen dos bits de referencia, el bit menos significativo 
 
 ![LSB y MSB](image-2.png)
 
+Fuente: https://knowthecode.io/labs/basics-of-digitizing-data/episode-5
+
 ![Nomenclatura binaria](image-3.png)
 
 <h3>Binario a decimal</h3>
@@ -26,7 +28,7 @@ Fuente: https://calculareconverter.com.br/binario-para-decimal/
 
 <h4>Ejercicios</h4>
 
-<ol type=''>
+<ol type='A'>
     <li>0b0111</li>
     <li>0b10001000</li>
     <li>0b01011101</li>
