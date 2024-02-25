@@ -95,7 +95,7 @@ Los condicionales permiten establecer condiciones internamente en el programa. A
 
 C++
 ```c++
-int a == 2;
+int a = 2;
 if(a == 1){
     cout<<"El valor de 'a' es igual a 1"<<endl;
 }else{
@@ -106,7 +106,7 @@ if(a == 1){
 C
 ```c
 //C
-int a == 2;
+int a = 2;
 if(a == 1){
     printf("El valor de 'a' es igual a 1 \n");
 }else{
