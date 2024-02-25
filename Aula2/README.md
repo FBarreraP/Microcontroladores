@@ -91,6 +91,8 @@ data &= ~(0x01<<4); //0b00010000 & ~(0b00010000)
 
 Los condicionales permiten establecer condiciones internamente en el programa. Algunos condicionales son: (a) if-else, (b) if-else anidados y (c) switch-case.
 
+<h3>if-else</h3>
+
 C++
 ```c++
 int a == 2;
@@ -112,6 +114,14 @@ if(a == 1){
 }
 
 ```
+
+<h3>if-else anidados</h3>
+
+
+
+<h3>switch-case</h3>
+
+
 
 <h2>Bucles o ciclos</h2>
 
