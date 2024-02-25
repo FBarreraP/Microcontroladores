@@ -284,7 +284,7 @@ do{
 Los arreglos (arrays) son de tamaño fijo y permiten almacenar información secuencial de elementos (números, caracteres, etc.) del mismo tipo. Existen dos tipos de arreglos, unidimensionales (vectores) y los multidimensionales (matrices 2D o 3D).
 
 Sintaxis de declaración
-```
+```c
 tipo NombreVector[Tamaño];
 tipo NombreMatriz[TamañoFila][TamañoColumna];
 ```
@@ -350,26 +350,78 @@ int cont = 0;
 for(i = 0; i <= 1; i++){ //filas
     for(j = 0; j <= 1; j++){ //columnas
         printf("Ingrese el número %d \n", cont++);
-        scanf("%f", &data[i]);
-        printf("El número ingresado en la posición [%d][%d] del vector, es: %f \n", i, data[i]);
+        scanf("%f", &data[i][j]);
+        printf("El número ingresado en la posición [%d][%d] del vector, es: %f \n", i, j, data[i][j]);
     }
 }
 ```
 
 C++
 ```c++
-
+float data[2][2];
+int i;
+int cont = 0;
+for(i = 0; i <= 1; i++){ //filas
+    for(j = 0; j <= 1; j++){ //columnas
+        cout<<"Ingrese el número "<<cont++<<endl;
+        cind>>data[i][j];
+        cout<<"El número ingresado en la posición ["<<i<<"]["<<j<<"] del vector, es: "<<data[i][j]<<endl;
+    }
+}
 ```
-
 
 <h2>Funciones</h2>
 
+Una función es un grupo de declaraciones que realizan una tarea específica; de igual manera se caracterizan por unos parámetros de entrada y un valor de retorno. Las librerías C++ proporcionan funciones construidas (strcat(), memcpy(), clock(), etc.). Hay tres formas de pasar los parámetros a una función: (a) valor, (b) puntero, (c) referencia.
+
+Sintaxis de declaración
+```c
+tipoVariableRetorno NombreFuncion(ParámetrosEntrada);
+```
+
+Sintaxis de definición
+```c
+tipoVariableRetorno NombreFuncion(ParámetrosEntrada){
+    Cuerpo de la función;
+}
+```
+
+Inicialización
+```c
+int suma(int num1, int num2);
+float suma(float num1, float num2);
+double suma(double num1, double num2);
+int8_t suma(int8_t num1, int8_t num2);
+uint8_t suma(uint8_t num1, uint8_t num2);
+```
+
 C
 ```c
+int a = 3, b = 4;
+
+int suma(int num1, int num2); //declaración
+
+int suma(int num1, int num2){ //definición
+    c = num1 + num2;
+    return c;
+}
+
+s = suma(a, b);
+printf("La suma de %d y %d es: %d", a, b, s);
 
 ```
 
 C++
 ```c++
+int a = 3, b = 4;
 
+int suma(int num1, int num2); //declaración
+
+int suma(int num1, int num2){ //definición
+    c = num1 + num2;
+    return c;
+}
+
+s = suma(a, b);
+cout<<"La suma de "<<a<<" y "<<b<<" es: "<<s<<endl;
 ```
