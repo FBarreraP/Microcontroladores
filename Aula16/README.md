@@ -4,14 +4,49 @@ Esta clase consiste en comprender las configruraciones del datasheet de la panta
 
 <h2>Pantalla LCD</h2>
 
+La pantalla LCD (Liquid Crystal Display) es delgada y plana, formada por un número de píxeles en color o monocromáticos posicionados delante de una fuente de luz (reflector).
 
+![LCD layers](image-2.png)
 
+Fuente: https://es.wikipedia.org/wiki/Pantalla_de_cristal_l%C3%ADquido
 
+Las pantallas LCD son elementos alfanuméricos que se utilizan como salidas en los sistemas electrónicos, con el objetivo principal de visualizar información, a través de código ASCII. Existen diferentes tipos de pantallas LCD (16x2, 20x2, 16x4, 20x4, entre otras).
 
+![LCD 16x2](image-7.png)
+
+Fuente: 
+
+![LCD 20x4](image-3.png)
+
+Fuente: http://www.panadisplay.com/monochrome-lcd/monochrome-cog-cog-lcd/arduino-20x2-lcd-module-display.html
+
+![LCD](image-5.png)
+
+Fuente: http://micropinguino.blogspot.com/2013/04/manejo-pantalla-lcd-1602-con-el.html
+
+![5x8 dot y 5x10 dot](image-6.png)
+
+![Conexiones LCD](image-4.png)
+
+La LCD debe ser configurada a través de algunos registros específicos
+
+![Configuración y datos LCD](image-8.png)
+
+![Registros LCD](image-9.png)
+
+La LCD tiene dos memorias, la DDRAM y la CGRAM para almacenar información
+
+<h3>DDRAM</h3>
+
+La memoria DDRAM permite 
+
+![alt text](image-10.png)
+
+<h3>CGRAM</h3>
 
 <h3>Ejercicio 1</h3>
 
-Montaje de la LCD a 8 bits con el PIC 18F4550
+Utilizar una pantalla LCD 16x2 (con 8 bits) para visualizar en la primera fila el nombre del estudiante a través de una interrupción externa de flanco de bajada.
 
 ![LCD 8 bits](image.png)
 
@@ -140,13 +175,11 @@ void DisplayShiftLeft(void){
         __delay_ms(time*10);
     }
 }
-
-
 ```
 
-<h3>Ejercicio 1</h3>
+<h3>Ejercicio 2</h3>
 
-Montaje de la LCD a 4 bits con el PIC 18F4550
+Utilizar una pantalla LCD 16x2 (con 4 bits) para visualizar en la primera fila el nombre del estudiante a través de una interrupción externa de flanco de bajada.
 
 ![LCD 4 bits](image-1.png)
 
