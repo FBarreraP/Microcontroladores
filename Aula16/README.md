@@ -11,6 +11,10 @@ Esta clase consiste en comprender las configruraciones del datasheet de la panta
 
 <h3>Ejercicio 1</h3>
 
+Montaje de la LCD a 8 bits con el PIC 18F4550
+
+![LCD 8 bits](image.png)
+
 Programación de la LCD a 8 bits
 
 ```c
@@ -141,6 +145,10 @@ void DisplayShiftLeft(void){
 ```
 
 <h3>Ejercicio 1</h3>
+
+Montaje de la LCD a 4 bits con el PIC 18F4550
+
+![LCD 4 bits](image-1.png)
 
 Programación de la LCD a 4 bits
 
