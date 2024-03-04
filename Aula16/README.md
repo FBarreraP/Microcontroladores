@@ -38,11 +38,23 @@ La LCD tiene dos memorias, la DDRAM y la CGRAM para almacenar información
 
 <h3>DDRAM</h3>
 
-La memoria DDRAM permite 
+La memoria DDRAM contiene todas las posiciones del display de la LCD, en las cuales se mostrará la información. Las posiciones iniciales para la fila 1 y la fila 2 son 0x80 y 0xC0, respectivamente.
 
-![alt text](image-10.png)
+![DDRAM](image-10.png)
 
 <h3>CGRAM</h3>
+
+La memoria CGRAM guarda todos los caracteres posibles que se pueden imprimir en la LCD, sin embargo, también tiene 8 espacios de memoria para guardar caracteres personalizables, los cuales se pueden crear a mano o por medio de la siguiente página: https://omerk.github.io/lcdchargen/
+
+![CGRAM](image-11.png)
+
+Para guardar o escribir los caracteres en la LCD, las posiciones de memoria son 0x40, 0x48, 0x50, 0x58, 0x60, 0x68, 0x70 y 0x78. 
+
+![CGRAM1](image-12.png)
+
+Para cargar o leer los caracteres de la LCD, las posiciones de memoria son 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06 y 0x07.
+
+![CGRAM displayed LCD](image-13.png)
 
 <h3>Ejercicio 1</h3>
 
