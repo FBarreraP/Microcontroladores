@@ -78,7 +78,12 @@ Utilizar un pulsador (interrupción de flanco de bajada) para mostrar la letra F
 <br>
 </div>
 
-
+<div align="center">
+<img src="image-8.png" alt="Ejercicio 1 Proteus"/>
+<br>
+<figcaption>Fuente: Autor</figcaption>
+<br>
+</div>
 
 ```c
 /*
