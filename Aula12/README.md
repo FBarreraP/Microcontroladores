@@ -34,10 +34,33 @@ Los registros INTCON son de escritura y lectura, los cuales contienen bits de ha
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
 
-<h3></h3>
+<h3>INTCON2</h3>
 
-<h3></h3>
+<div align="center">
+<img src="image-3.png" alt="INTCON2"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
 
+<div align="center">
+<img src="image-4.png" alt="bits INTCON2"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
+
+<h3>INTCON3</h3>
+
+<div align="center">
+<img src="image-5.png" alt="INTCON3"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
+
+<div align="center">
+<img src="image-6.png" alt="bits INTCON3"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
 
 <h3></h3>
 
