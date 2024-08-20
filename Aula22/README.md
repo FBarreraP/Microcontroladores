@@ -123,52 +123,86 @@ OERR (bit 1) = El receptor tiene datos entrantes pero el buffer de datos de rece
 
 <h4>Registro PIR1</h4>
 
-![PIR1](Imagenes/image-13.png)
+<div align="center">
+<img src="Imagenes/image-11.png" alt="PIR1"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
 
 <h3>Ejemplo 1</h3>
 
-Utilizar dos PIC 18F45K22, uno para realizar el contador de dos pulsos, a través de interrupciones externas y posteriormente enviar dichos datos a través de comunicación serial al otro PIC, en el cual se debe visualizar la información recibida en una pantalla LCD.
+Utilizar un PIC 18F4550 para realizar el reconocimiento y el contador de dos pulsos, a través de interrupciones externas, para posteriormente enviar dichos datos a través de comunicación serial y con otro PIC 18F4550 se debe visualizar la información recibida en una pantalla LCD.
 
-![Ejemplo 1](Imagenes/image-14.png)
+<div align="center">
+<img src="Imagenes/image-12.png" alt="Ejemplo 1"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
 
 <h4>PIC transmisor</h4>
 
 ```c
+/*
+PIC 18F4550
+UART transmisor
+Author: Fabián Barrera Prieto
+Mestrado em Sistemas Mecatrônicos
+Created on 13 de Outubro de 2023, 12:44
+ */
+
 #include <xc.h>
 #include <stdio.h>
 #include <string.h>
 
-#pragma config FOSC = INTIO67
-#pragma config WDTEN = OFF
+#pragma config FOSC = INTOSC_HS
+#pragma config WDT = OFF
 #pragma config LVP = OFF
 
-#define _XTAL_FREQ 16000000
+#define _XTAL_FREQ 8000000
 #define time 100
 
 void settings(void);
 void __interrupt() Tx(void);
 
-unsigned char i,k=0,j=0;
+unsigned char i, k = 0, j = 0, flag = 0;
 char text[20];
 
 void main(void) {
     settings();
-    while(1){
-        
+    while (1) {
+        if (flag == 1) {
+            k++;
+            sprintf(text, "B) Int.2: %d\n", k);
+            for (i = 0; i <= strlen(text); i++) {
+                while (TXIF == 0);
+                TXREG = text[i];
+            }
+            while (TXIF == 0);
+            TXREG = 0x0D; //Retorno de carro
+            flag = 0;
+        } else if (flag == 2) {
+            j++;
+            sprintf(text, "A) Int.1: %d\n", j);
+            for (i = 0; i <= strlen(text); i++) {
+                while (TXIF == 0);
+                TXREG = text[i];
+            }
+            while (TXIF == 0);
+            TXREG = 0x0D; //Retorno de carro
+            flag = 0;
+        }
     }
 }
 
-void settings(void){
+void settings(void) {
     OSCCON = 0x72;
-    ANSELB = 0x00;
-    ANSELC = 0x00;
-    TRISB = 0x06;
+    ADCON1 = 0x0F;
     //Serial UART
     TRISCbits.TRISC6 = 0;
     TRISCbits.TRISC7 = 1;
-    SPBRG1 = 0x19;
-    RCSTA1 = 0x90;
-    TXSTA1 = 0x20;
+    SPBRG = 0x0C;
+    RCSTA = 0x90;
+    TXSTA = 0x20;
     //Interrupción externa
     GIE = 1;
     INT2IE = 1;
@@ -179,28 +213,16 @@ void settings(void){
     INTEDG1 = 0;
 }
 
-void __interrupt() Tx(void){
-    if(INT2IF == 1){
+void __interrupt() Tx(void) {
+    if (INT2IF == 1) {
+        __delay_ms(time);
         INT2IF = 0;
-        k++;
-        sprintf(text,"B) Int.2: %d\n",k);
-        for(i=0; i<=strlen(text); i++){
-            while(TX1IF == 0);
-            TXREG1 = text[i];
-        }
-        while(TX1IF == 0);
-        TXREG1 = 0x0D;//Retorno de carro
+        flag = 1;
     }
-    if(INT1IF == 1){
+    if (INT1IF == 1) {
+        __delay_ms(time);
         INT1IF = 0;
-        j++;
-        sprintf(text,"A) Int.1: %d\n",j);
-        for(i=0; i<=strlen(text); i++){
-            while(TX1IF == 0);
-            TXREG1 = text[i];
-        }
-        while(TX1IF == 0);
-        TXREG1 = 0x0D;//Retorno de carro
+        flag = 2;
     }
 }
 ```
@@ -208,13 +230,22 @@ void __interrupt() Tx(void){
 <h4>PIC receptor</h4>
 
 ```c
-#include <xc.h>
+/*
+PIC 18F4550
+UART receptor
+Author: Fabián Barrera Prieto
+Mestrado em Sistemas Mecatrônicos
+Created on 13 de Outubro de 2023, 12:52
+ */
 
-#pragma config FOSC = INTIO67
-#pragma config WDTEN = OFF
+#include <xc.h>
+#include <string.h>
+
+#pragma config FOSC = INTOSC_HS
+#pragma config WDT = OFF
 #pragma config LVP = OFF
 
-#define _XTAL_FREQ 16000000
+#define _XTAL_FREQ 8000000
 #define time 10
 //LCD
 #define CD 0x01 //Clear Display
@@ -226,8 +257,9 @@ void __interrupt() Tx(void){
 #define FS 0x28 //(0x3C) Function Set
 #define RAW1 0x80 //DDRAM display
 #define RAW2 0xC0 //DDRAM display
-#define RS LATE1 //Register Selection
-#define E LATE0 //Enable
+#define button PORTBbits.RB2 //Button start
+#define RS LATEbits.LATE1 //Register Selection
+#define E LATEbits.LATE0 //Enable
 
 void settings(void);
 void __interrupt() RECEIVE(void);
@@ -236,50 +268,59 @@ void SettingsLCD(unsigned char word);
 void WriteLCD(unsigned char word);
 void LCD(unsigned char data);
 
+unsigned char flag = 0, d, i, k = 0, data[15];
+
 void main(void) {
     settings();
-    while(1){
-        
+    while (1) {
+        if (flag == 1) {
+            for (i = 0; i < strlen(data); i++) {
+                if (data[i] == 0x41) {
+                    SettingsLCD(RAW1);
+                    WriteLCD(data[i]);
+                } else if (data[i] == 'B') {
+                    SettingsLCD(RAW2);
+                    WriteLCD(data[i]);
+                } else if (data[i] == 0x0D) {
+                    SettingsLCD(RH);
+                } else {
+                    WriteLCD(data[i]);
+                }
+            }
+            flag = 0;
+        }
     }
 }
 
-void SettingsLCD(unsigned char word){
+void SettingsLCD(unsigned char word) {
     RS = 0;
     LCD(word >> 4); // 4 MSB
     LCD(word & 0x0F); // 4 LSB
 }
 
-void WriteLCD(unsigned char word){
+void WriteLCD(unsigned char word) {
     RS = 1;
     LCD(word >> 4);
     LCD(word & 0x0F);
 }
 
-void LCD(unsigned char data){ //Opción bits
+void LCD(unsigned char data) { //Opción bits
     E = 1;
-    __delay_us(time*5);
-    LATDbits.LATD0 = (data & 0x01);
-    __delay_us(time*5);
-    LATDbits.LATD1 = (data & 0x02) >> 1;
-    __delay_us(time*5);
-    LATDbits.LATD2 = (data & 0x04) >> 2;
-    __delay_us(time*5);
-    LATDbits.LATD3 = (data & 0x08) >> 3;
-    __delay_us(time*5);
+    __delay_us(time);
+    LATD = data;
+    __delay_us(time);
     E = 0;
-    __delay_us(time*5);
+    __delay_us(time);
 }
 
-void settings(void){
+void settings(void) {
     OSCCON = 0x72;
-    ANSELC = 0x00;
-    ANSELD = 0x00;
-    ANSELE = 0x00;
+    ADCON1 = 0x0F;
+    //LCD
     TRISD = 0;
     TRISE = 0;
     LATD = 0;
     LATE = 0;
-    //LCD
     SettingsLCD(0x02); //Iniciar la LCD con el método nibble (4 MSB y 4 LSB)
     SettingsLCD(EMS);
     SettingsLCD(DC);
@@ -288,197 +329,7 @@ void settings(void){
     //Serial UART
     TRISCbits.TRISC6 = 0;
     TRISCbits.TRISC7 = 1;
-    SPBRG = 0x19;
-    RCSTA = 0x90;
-    TXSTA = 0x20;
-    //Interrupción
-    GIE = 1;
-    PEIE = 1;
-    RC1IE = 1;
-    RC1IF = 0;
-}
-
-void __interrupt() RECEIVE(void){
-    unsigned char d;
-    if(RC1IF == 1){
-        d = RCREG;
-        if(d == 0x41){
-            SettingsLCD(RAW1);
-            WriteLCD(d);
-        }else if(d == 'B'){
-            SettingsLCD(RAW2);
-            WriteLCD(d);
-        }else if(d == 0x0D){
-            SettingsLCD(RH);
-        }else{
-            WriteLCD(d);
-        }
-    }    
-}
-```
-
-<h3>Ejemplo 2</h3>
-
-Utilizar un PIC 18F45K22 para realizar adquisición y conversión de datos análogos a digitales de un potenciómetro y un LM35, y enviar dichos datos a través de comunicación serial con otro PIC 18F45K22 en donde se deben visualizar en una pantalla LCD. Además, visualizar los datos en tiempo real en Matlab.
-
-![Ejemplo 2](Imagenes/image-15.png)
-
-<h4>PIC transmisor</h4>
-
-```c
-#include <xc.h>
-#include <stdio.h>
-#include <string.h>
-
-#pragma config FOSC = INTIO67
-#pragma config WDTEN = OFF
-#pragma config LVP = OFF
-
-#define _XTAL_FREQ 16000000
-#define time 100
-
-void settings(void);
-void start(void);
-
-int digital1, digital2;
-float conversion1, conversion2, temperature;
-unsigned char i;
-char text[20];
-
-void main(void) {
-    settings();
-    while(1){
-        start();
-    }
-}
-
-void settings(void){
-    OSCCON = 0x72;
-    ANSELA = 0x03;
-    ANSELC = 0x00;
-    TRISA = 0x03;
-    //ADC
-    ADCON0 = 0x01;
-    ADCON1 = 0x00;
-    ADCON2 = 0x95;
-    //Serial UART
-    TRISCbits.TRISC6 = 0;
-    TRISCbits.TRISC7 = 1;
-    SPBRG = 0x19;
-    RCSTA = 0x90;
-    TXSTA = 0x20;
-}
-
-void start(void){
-    ADCON0 = 0x01;
-    __delay_ms(time);
-    GO = 1;
-    while(GO == 1);
-    digital1 = ADRESH<<8|ADRESL;
-    conversion1 = (float)digital1 * (5.0/1023.0);
-    ADCON0 = 0x05;
-    __delay_ms(time);
-    GO = 1;
-    while(GO == 1);
-    digital2 = ADRESH<<8|ADRESL;
-    conversion2 = (float)digital2 * (5.0/1023.0);
-    temperature = conversion2 /0.01;
-    sprintf(text,"%.4f,%.4f\n",conversion1,temperature);
-    for(i=0; i<=strlen(text); i++){
-        while(TX1IF == 0);
-        TXREG = text[i];
-    }
-    //while(TXIF == 0);
-    //TXREG = 0x0A;//Salto de línea
-    while(TXIF == 0);
-    TXREG = 0x0D;//Retorno de carro
-}
-```
-
-<h4>PIC receptor</h4>
-
-```c
-#include <xc.h>
-
-#pragma config FOSC = INTIO67
-#pragma config WDTEN = OFF
-#pragma config LVP = OFF
-
-#define _XTAL_FREQ 16000000
-#define time 10
-//LCD
-#define CD 0x01 //Clear Display
-#define RH 0x02 //(0x03) Return Home
-#define EMS 0x06 //Entry Mode Set
-#define DC 0x0F //(0x0E) Display Control
-#define DSr 0x1C //Display Shift Rigth
-#define DSl 0x18 //Display Shift Left
-#define FS 0x28 //(0x3C) Function Set
-#define RAW1 0x82 //DDRAM display
-#define RAW2 0xC4 //DDRAM display
-#define RS LATE1 //Register Selection
-#define E LATE0 //Enable
-
-void settings(void);
-void __interrupt() RECEIVE(void);
-//LCD
-void SettingsLCD(unsigned char word);
-void WriteLCD(unsigned char word);
-void LCD(unsigned char data);
-
-void main(void) {
-    settings();
-    while(1){
-        
-    }
-}
-
-void SettingsLCD(unsigned char word){
-    RS = 0;
-    LCD(word >> 4); // 4 MSB
-    LCD(word & 0x0F); // 4 LSB
-}
-
-void WriteLCD(unsigned char word){
-    RS = 1;
-    LCD(word >> 4);
-    LCD(word & 0x0F);
-}
-
-void LCD(unsigned char data){ //Opción bits
-    E = 1;
-    __delay_us(time*5);
-    LATDbits.LATD0 = (data & 0x01);
-    __delay_us(time*5);
-    LATDbits.LATD1 = (data & 0x02) >> 1;
-    __delay_us(time*5);
-    LATDbits.LATD2 = (data & 0x04) >> 2;
-    __delay_us(time*5);
-    LATDbits.LATD3 = (data & 0x08) >> 3;
-    __delay_us(time*5);
-    E = 0;
-    __delay_us(time*5);
-}
-
-void settings(void){
-    OSCCON = 0x72;
-    ANSELC = 0x00;
-    ANSELD = 0x00;
-    ANSELE = 0x00;
-    TRISD = 0;
-    TRISE = 0;
-    LATD = 0;
-    LATE = 0;
-    //LCD
-    SettingsLCD(0x02); //Iniciar la LCD con el método nibble (4 MSB y 4 LSB)
-    SettingsLCD(EMS);
-    SettingsLCD(DC);
-    SettingsLCD(FS);
-    SettingsLCD(CD);        
-    //Serial UART
-    TRISCbits.TRISC6 = 0;
-    TRISCbits.TRISC7 = 1;
-    SPBRG = 0x19;
+    SPBRG = 0x0C;
     RCSTA = 0x90;
     TXSTA = 0x20;
     //Interrupción
@@ -488,69 +339,15 @@ void settings(void){
     RCIF = 0;
 }
 
-void __interrupt() RECEIVE(void){
-    unsigned char d;
-    if(RCIF == 1){
+void __interrupt() RECEIVE(void) {
+    if (RCIF == 1) {
         d = RCREG;
-        WriteLCD(d);
-        if(d == 0x0D){
-            SettingsLCD(RH);
+        data[k] = d;
+        k++;
+        if (data[k - 1] == 0x0D) {
+            flag = 1;
+            k = 0;
         }
-    }    
+    }
 }
-```
-
-<h4>MATLAB</h4>
-
-```matlab
-% Limpa o Matlab
-clc
-clear all
-close all
-% Elimina os resquícios presentes na porta serial
-oldobj = instrfind;
-if ~isempty(oldobj)
-    fclose(oldobj);     
-    delete(oldobj);
-end
-% Cria a porta serial
-%s = serial('COM2','BaudRate',9600,'DataBits',8,'Parity','None','StopBits',1);
-if ~exist('s','var')
-    s = serial('COM2','BaudRate',9600,'DataBits',8,'Parity','None','StopBits',1);
-%     s = serial('COM2','BaudRate',9600);
-end
-% Apertura da comunicação serial
-if strcmp(get(s,'status'),'closed')
-    fopen(s);
-end
-tic
-% Apaga os dados iniciais
-t_ini = toc; t = 0; 
-while (t < 1) 
-    fscanf(s);
-    t = toc - t_ini;
-end
-% Leitura de um string
-% a=fread(s,1);
-%plot
-figure(1);
-fig1 = newplot;
-figure(2);
-fig2 = newplot;
-i=1;
-while 1
-    a = fscanf(s);
-    %str(i) = {a};
-    temp = cellfun(@str2num,strsplit(a,','));%temp = eval(['[',str{i},']']);
-    values(i,:) = temp;
-    plot(fig1,values(:,1));
-    plot(fig2,values(:,2));
-    pause(0.000001);
-    i=i+1;
-    if i == 1001
-        break
-    end
-end
-% Fecha a comunicacao serial
-fclose(s);
 ```
