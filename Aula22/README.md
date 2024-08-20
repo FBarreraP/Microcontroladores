@@ -12,8 +12,6 @@ La comunicación serial (simplex, half o full duplex) permite transmitir y/o rec
 <figcaption>Fuente: http://tutosrafaz.blogspot.com/2015/06/comunicacion-serial-rs232-pic16f887a.html</figcaption>
 </div>
 
-Fuente: http://tutosrafaz.blogspot.com/2015/06/comunicacion-serial-rs232-pic16f887a.html
-
 <h3>Tipos de comunicación serial</h3>
 
 Modos simplex, half duplex y full duplex
@@ -21,7 +19,7 @@ Modos simplex, half duplex y full duplex
 <div align="center">
 <img src="Imagenes/image-2.png" alt="Simplex, Half y Full"/>
 <br>
-<figcaption>Fuente: </figcaption>
+<figcaption>Fuente: http://eveliux.com/mx/curso/modos-simplex-half-duplex-y-full-duplex.html</figcaption>
 </div>
 
 <h3>Trama de comunicación UART</h3>
@@ -31,18 +29,14 @@ RS232 y RS485 son dos comunicaciones seriales de tipo asíncrona (UART), las cua
 <div align="center">
 <img src="Imagenes/image-5.png" alt="Ejemplo"/>
 <br>
-<figcaption>Fuente: </figcaption>
+<figcaption>Fuente: https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Cap%C3%ADtulo-21:-Baudios-y-transmisi%C3%B3n</figcaption>
 </div>
-
-Fuente: https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Cap%C3%ADtulo-21:-Baudios-y-transmisi%C3%B3n
 
 <div align="center">
 <img src="Imagenes/image-1.png" alt="Trama UART"/>
 <br>
-<figcaption>Fuente: </figcaption>
+<figcaption>Fuente: https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Cap%C3%ADtulo-21:-Baudios-y-transmisi%C3%B3n</figcaption>
 </div>
-
-Fuente: https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Cap%C3%ADtulo-21:-Baudios-y-transmisi%C3%B3n
 
 $$T_b=\frac{1}{V_t}$$
 
@@ -57,10 +51,8 @@ El conversor de USB a TTL (FTDI), puede alimentar +5V del PIC puede conectarse a
 <div align="center">
 <img src="Imagenes/image-6.png" alt="FTDI"/>
 <br>
-<figcaption>Fuente: </figcaption>
+<figcaption>Fuente: https://deepbluembedded.com/usb-ttl-converter-tutorial-pc-control-for-microcontrollers/</figcaption>
 </div>
-
-https://deepbluembedded.com/usb-ttl-converter-tutorial-pc-control-for-microcontrollers/
 
 <h3>HC-05</h3>
 
@@ -77,16 +69,16 @@ Es un protocolo de comunicación del PIC 18F4550, el cual tiene una salida y una
 <div align="center">
 <img src="Imagenes/image-8.png" alt="Pines UART PIC"/>
 <br>
-<figcaption>Fuente: </figcaption>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
 
-Para configurar la comunicación serial en el PIC18F45K22 es necesario tener en cuenta los siguientes pasos:
+Para configurar la comunicación serial en el PIC18F4550 es necesario tener en cuenta los siguientes pasos:
 
-1. Configurar el pin RXx como entrada en el puerto C o D
-2. Configurar el pin TXx como salida en el puerto C o D
-3. Inicializar el valor de la velocidad de transmisión (baudios) a través del registro SPBRGx.
-4. Configurar el registro de recepción (RCSTAx).
-5. Configurar el registro de transmisión (TXSTAx).
+1. Configurar el pin RX como entrada a través del registro TRISC
+2. Configurar el pin TX como salida a través del registro TRISC
+3. Inicializar el valor de la velocidad de transmisión (baudios) a través del registro SPBRG.
+4. Configurar el registro de recepción (RCSTA).
+5. Configurar el registro de transmisión (TXSTA).
 
 <h4>Paso 3 - Registro SPBRG</h4>
 
@@ -94,24 +86,40 @@ Es un registro que permite configurar la velocidad de transmisión (baudios) de 
 
 $$𝐷𝑒𝑠𝑖𝑟𝑒𝑑 𝐵𝑎𝑢𝑑 𝑅𝑎𝑡𝑒=\frac{𝐹_{𝑂𝑆𝐶}}{64 \cdot (𝑆𝑃𝐵𝑅𝐺+1)}$$
 
-$$𝑆𝑃𝐵𝑅𝐺𝑥=\frac{𝐹_{𝑂𝑆𝐶}}{𝐷𝑒𝑠𝑖𝑟𝑒𝑑 𝐵𝑎𝑢𝑑 𝑅𝑎𝑡𝑒 \cdot 64}−1 = \frac{16 𝑀𝐻𝑧}{9600 \cdot 64}-1=25_{10}=19_{16}$$
+$$𝑆𝑃𝐵𝑅𝐺=\frac{𝐹_{𝑂𝑆𝐶}}{𝐷𝑒𝑠𝑖𝑟𝑒𝑑 𝐵𝑎𝑢𝑑 𝑅𝑎𝑡𝑒 \cdot 64}−1 = \frac{8 𝑀𝐻𝑧}{9600 \cdot 64}-1=12_{10}=C_{16}$$
 
-<h4>Paso 4 - Registro RCSTAx</h4>
+<h4>Paso 4 - Registro RCSTA</h4>
 
 Es el registro de la comunicación UART del PIC 18F45K22 que permite configurar la recepción de datos.
 
-![RCSTAx](Imagenes/image-9.png)
+<div align="center">
+<img src="Imagenes/image-3.png" alt="RCSTA"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
 
-![bits RCSTAx](Imagenes/image-10.png)
+<div align="center">
+<img src="Imagenes/image-4.png" alt="bits RCSTA"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
 
 FERR (bit 2) = Es un error en la trama de datos, donde el receptor no detecta el bit de stop <br>
 OERR (bit 1) = El receptor tiene datos entrantes pero el buffer de datos de recepción (RCREG) no se ha limpiado
 
-<h4>Paso 5 - Registro TXSTAx</h4>
+<h4>Paso 5 - Registro TXSTA</h4>
 
-![TXSTAx](Imagenes/image-11.png)
+<div align="center">
+<img src="Imagenes/image-9.png" alt="TXSTA"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
 
-![bits TXSTAx](Imagenes/image-12.png)
+<div align="center">
+<img src="Imagenes/image-10.png" alt="bits TXSTA"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
 
 <h4>Registro PIR1</h4>
 
