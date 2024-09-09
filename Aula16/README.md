@@ -6,33 +6,33 @@ Esta clase consiste en comprender las configruraciones del datasheet de la panta
 
 La pantalla LCD (Liquid Crystal Display) es delgada y plana, formada por un número de píxeles en color o monocromáticos posicionados delante de una fuente de luz (reflector).
 
-![LCD layers](image-2.png)
+![LCD layers](Imagenes/image-2.png)
 
 Fuente: https://es.wikipedia.org/wiki/Pantalla_de_cristal_l%C3%ADquido
 
 Las pantallas LCD son elementos alfanuméricos que se utilizan como salidas en los sistemas electrónicos, con el objetivo principal de visualizar información, a través de código ASCII. Existen diferentes tipos de pantallas LCD (16x2, 20x2, 16x4, 20x4, entre otras).
 
-![LCD 16x2](image-7.png)
+![LCD 16x2](Imagenes/image-7.png)
 
 Fuente: 
 
-![LCD 20x4](image-3.png)
+![LCD 20x4](Imagenes/image-3.png)
 
 Fuente: http://www.panadisplay.com/monochrome-lcd/monochrome-cog-cog-lcd/arduino-20x2-lcd-module-display.html
 
-![LCD](image-5.png)
+![LCD](Imagenes/image-5.png)
 
 Fuente: http://micropinguino.blogspot.com/2013/04/manejo-pantalla-lcd-1602-con-el.html
 
-![5x8 dot y 5x10 dot](image-6.png)
+![5x8 dot y 5x10 dot](Imagenes/image-6.png)
 
-![Conexiones LCD](image-4.png)
+![Conexiones LCD](Imagenes/image-4.png)
 
 La LCD debe ser configurada a través de algunos registros específicos
 
-![Configuración y datos LCD](image-8.png)
+![Configuración y datos LCD](Imagenes/image-8.png)
 
-![Registros LCD](image-9.png)
+![Registros LCD](Imagenes/image-9.png)
 
 La LCD tiene dos memorias, la DDRAM y la CGRAM para almacenar información
 
@@ -40,27 +40,27 @@ La LCD tiene dos memorias, la DDRAM y la CGRAM para almacenar información
 
 La memoria DDRAM contiene todas las posiciones del display de la LCD, en las cuales se mostrará la información. Las posiciones iniciales para la fila 1 y la fila 2 son 0x80 y 0xC0, respectivamente.
 
-![DDRAM](image-10.png)
+![DDRAM](Imagenes/image-10.png)
 
 <h3>CGRAM</h3>
 
 La memoria CGRAM guarda todos los caracteres posibles que se pueden imprimir en la LCD, sin embargo, también tiene 8 espacios de memoria para guardar caracteres personalizables, los cuales se pueden crear a mano o por medio de la siguiente página: https://omerk.github.io/lcdchargen/
 
-![CGRAM](image-11.png)
+![CGRAM](Imagenes/image-11.png)
 
 Para guardar o escribir los caracteres en la LCD, las posiciones de memoria son 0x40, 0x48, 0x50, 0x58, 0x60, 0x68, 0x70 y 0x78. 
 
-![CGRAM1](image-12.png)
+![CGRAM1](Imagenes/image-12.png)
 
 Para cargar o leer los caracteres de la LCD, las posiciones de memoria son 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06 y 0x07.
 
-![CGRAM displayed LCD](image-13.png)
+![CGRAM displayed LCD](Imagenes/image-13.png)
 
 <h3>Ejercicio 1</h3>
 
 Utilizar una pantalla LCD 16x2 (con 8 bits) para visualizar en la primera fila el nombre del estudiante a través de una interrupción externa de flanco de bajada.
 
-![LCD 8 bits](image.png)
+![LCD 8 bits](Imagenes/image.png)
 
 Programación de la LCD a 8 bits
 
@@ -193,7 +193,7 @@ void DisplayShiftLeft(void){
 
 Utilizar una pantalla LCD 16x2 (con 4 bits) para visualizar en la primera fila el nombre del estudiante a través de una interrupción externa de flanco de bajada.
 
-![LCD 4 bits](image-1.png)
+![LCD 4 bits](Imagenes/image-1.png)
 
 Programación de la LCD a 4 bits
 

@@ -7,7 +7,7 @@ Esta clase consiste en comprender las conexiones y el funcionamiento de un tecla
 El teclado matricial alfanúmerico está compuesto principalmente por pulsadores conectados internamente en las filas y columnas.  Estos elementos son utilizados como entradas en los sistemas electrónicos, por tanto deben tener una conexión pull up o pull down.
 
 <div align="center">
-<img src="image.png" alt="Teclados matriciales"/>
+<img src="Imagenes/image.png" alt="Teclados matriciales"/>
 <br>
 <figcaption>Fuente: https://electrocrea.com/products/teclado-matricial-4x4-rigido</figcaption>
 <br>
@@ -15,7 +15,7 @@ El teclado matricial alfanúmerico está compuesto principalmente por pulsadores
 </div>
 
 <div align="center">
-<img src="image-1.png" alt="Conexiones teclado matricial con PIC"/>
+<img src="Imagenes/image-1.png" alt="Conexiones teclado matricial con PIC"/>
 <br>
 <figcaption>Fuente: Autor</figcaption>
 </div>
@@ -25,7 +25,7 @@ El teclado matricial alfanúmerico está compuesto principalmente por pulsadores
 Utilizar un teclado matricial 4x4 e indicar en una pantalla LCD el número presionado en dicho teclado.
 
 <div align="center">
-<img src="image-2.png" alt="Ejercicio 1"/>
+<img src="Imagenes/image-2.png" alt="Ejercicio 1"/>
 <br>
 <figcaption>Fuente: Autor</figcaption>
 </div>
