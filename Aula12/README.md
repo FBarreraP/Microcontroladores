@@ -15,7 +15,7 @@ Bits de las interrupciones:
 Los registros INTCON son de escritura y lectura, los cuales contienen bits de habilitación, prioridad y flags para las interrupciones.
 
 <div align="center">
-<img src="image.png" alt="INTx"/>
+<img src="Imagenes/image.png" alt="INTx"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
@@ -23,13 +23,13 @@ Los registros INTCON son de escritura y lectura, los cuales contienen bits de ha
 <h3>INTCON</h3>
 
 <div align="center">
-<img src="image-1.png" alt="INTCON"/>
+<img src="Imagenes/image-1.png" alt="INTCON"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
 
 <div align="center">
-<img src="image-2.png" alt="bits INTCON"/>
+<img src="Imagenes/image-2.png" alt="bits INTCON"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
@@ -37,13 +37,13 @@ Los registros INTCON son de escritura y lectura, los cuales contienen bits de ha
 <h3>INTCON2</h3>
 
 <div align="center">
-<img src="image-3.png" alt="INTCON2"/>
+<img src="Imagenes/image-3.png" alt="INTCON2"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
 
 <div align="center">
-<img src="image-4.png" alt="bits INTCON2"/>
+<img src="Imagenes/image-4.png" alt="bits INTCON2"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
@@ -51,13 +51,13 @@ Los registros INTCON son de escritura y lectura, los cuales contienen bits de ha
 <h3>INTCON3</h3>
 
 <div align="center">
-<img src="image-5.png" alt="INTCON3"/>
+<img src="Imagenes/image-5.png" alt="INTCON3"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
 
 <div align="center">
-<img src="image-6.png" alt="bits INTCON3"/>
+<img src="Imagenes/image-6.png" alt="bits INTCON3"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
@@ -67,7 +67,7 @@ Los registros INTCON son de escritura y lectura, los cuales contienen bits de ha
 Utilizar un pulsador como contador para encender 8 leds, los cuales deben mostrar el número binario del contador, a través de una interrupción con flanco de bajada (Pull Up) en el pin INT0 del PIC 18F4550, mientras que un led en otro puerto enciende y apaga con un tiempo de 0.1s.
 
 <div align="center">
-<img src="image-7.png" alt="Ejercicio 1"/>
+<img src="Imagenes/image-7.png" alt="Ejercicio 1"/>
 <br>
 <figcaption>Fuente: Autor</figcaption>
 </div>

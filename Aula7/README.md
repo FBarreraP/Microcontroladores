@@ -7,7 +7,7 @@ Esta clase consiste en comprender las entradas digitales y las configuraciones d
 Las configuraciones Pull Up y Pull Down son resistencias configuradas para establecer un estado lógico deseado a la entrada del circuito. Pull Up garantiza un estado lógico alto y Pull Down un estado lógico bajo. Estas dos configuraciones permiten evitar ruidos eléctricos.
 
 <div align="center">
-<img src="image.png" alt="Pull Up y Pull Down"/>
+<img src="Imagenes/image.png" alt="Pull Up y Pull Down"/>
 <br>
 <figcaption>Fuente: http://nosinmiarduino.blogspot.com/2014/07/resistencias-de-pull-up-y-pull-down.html</figcaption>
 </div>
@@ -17,7 +17,7 @@ Las configuraciones Pull Up y Pull Down son resistencias configuradas para estab
 En las entradas digitales, con sensores ruidosos o pulsadores se generan fluctuaciones (ruido) al pasar de un estado lógico a otro, por un tiempo (ts) hasta que la señal se estabiliza por un tiempo (td).
 
 <div align="center">
-<img src="image-1.png" alt="Rebote"/>
+<img src="Imagenes/image-1.png" alt="Rebote"/>
 <br>
 <figcaption>Fuente: https://miarduinounotieneunblog.blogspot.com/2016/01/pulsador-antirrebote-con-contador-de.html</figcaption>
 </div>
@@ -39,7 +39,7 @@ if(PORTAbits.RA0 == 1){ //Si es presionado el pulsador (Pull Down)
 Encender dos leds con dos pulsadores independientes y de configuración diferente (Pull Up y Pull Down), el apagado debe ser después de 1 segundo. Además, evitar el antirebote que generan esas dos entradas digitales. 
 
 <div align="center">
-<img src="image-2.png" alt="Ejemplo 1"/>
+<img src="Imagenes/image-2.png" alt="Ejemplo 1"/>
 <br>
 <figcaption>Fuente: Autor</figcaption>
 </div>
@@ -108,7 +108,7 @@ void start(void){
 Utilizar un DIP switch de 8 posiciones como entradas digitales para encender 8 leds cuando el valor lógico sea 1. El apagado de cada uno de los 8 leds debe ser inmediatamente después de colocar la respectiva posición del DIP switch en valor lógico 0.
 
 <div align="center">
-<img src="image-3.png" alt="Ejemplo 2"/>
+<img src="Imagenes/image-3.png" alt="Ejemplo 2"/>
 <br>
 <figcaption>Fuente: Autor</figcaption>
 </div>
