@@ -6,9 +6,9 @@ Esta clase consiste en realizar un repaso de programación en C
 
 Una variable es una posición en memoria a la que se le asigna un nombre, la cual sirve para guardar una información (números o datos). Los tipos de variables son globales y locales. Una constante es un espacio de memoria reservado para un valor fijo y que no se modificará.
 
-![Variables de tipo entero](image.png)
+![Variables de tipo entero](Imagenes/image.png)
 
-![Variables de tipo flotante](image-1.png)
+![Variables de tipo flotante](Imagenes/image-1.png)
 
 <h2>Tipos de datos</h2>
 
@@ -44,7 +44,7 @@ uint16_t p = 0xF15E;
 int32_t q = 0x0000FFFF;
 uint64_t r = 0x0000000000000001;
 ```
-![int4_t y uint4_t](image-2.png)
+![int4_t y uint4_t](Imagenes/image-2.png)
 
 <h2>Operaciones</h2>
 
@@ -52,7 +52,7 @@ uint64_t r = 0x0000000000000001;
 
 Suma (+), Resta (-), Multiplicación (*), División (/) y Módulo (%).
 
-![División](image-3.png)
+![División](Imagenes/image-3.png)
 
 <h3>Operaciones lógicas</h3> 
 
@@ -312,7 +312,7 @@ int num2[3][2] = {{22, 3},
                   {81, 1492}};
 ```
 
-![Arreglos con index](image-4.png)
+![Arreglos con index](Imagenes/image-4.png)
 
 Los arreglos (arrays) permiten almacenar y obtener información en una única variable utilizando un índice (<i>index</i>), siendo el índice '0' la posición inicial de los vectores y matrices.
 
