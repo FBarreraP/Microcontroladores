@@ -84,6 +84,14 @@ Encender y apagar los leds en cada uno de los pines de cada uno de los puertos (
 </div>
 
 ```c
+/*
+PIC 18F4550
+Salidas digitales
+Author: Fabián Barrera Prieto
+Mestrado em Sistemas Mecatrônicos
+Created on 24 de Agosto de 2020, 07:52
+ */
+
 #include <xc.h>
 
 #pragma config FOSC = INTOSC_HS 
@@ -138,6 +146,14 @@ A partir del ejercicio 1, encender los dos leds más significativos y realizar d
 </div>
 
 ```c
+/*
+PIC 18F4550
+Salidas digitales
+Author: Fabián Barrera Prieto
+Mestrado em Sistemas Mecatrônicos
+Created on 24 de Agosto de 2020, 07:54
+ */
+
 #include <xc.h>
 
 #pragma config FOSC = INTOSC_HS 
