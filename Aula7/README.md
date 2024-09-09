@@ -34,12 +34,12 @@ if(PORTAbits.RA0 == 1){ //Si es presionado el pulsador (Pull Down)
 }
 ```
 
-<h3>Ejercicio 1</h3>
+<h3>Ejemplo 1</h3>
 
 Encender dos leds con dos pulsadores independientes y de configuración diferente (Pull Up y Pull Down), el apagado debe ser después de 1 segundo. Además, evitar el antirebote que generan esas dos entradas digitales. 
 
 <div align="center">
-<img src="image-2.png" alt="Ejercicio 1"/>
+<img src="image-2.png" alt="Ejemplo 1"/>
 <br>
 <figcaption>Fuente: Autor</figcaption>
 </div>
@@ -103,12 +103,12 @@ void start(void){
 }
 ```
 
-<h3>Ejercicio 2</h3>
+<h3>Ejemplo 2</h3>
 
 Utilizar un DIP switch de 8 posiciones como entradas digitales para encender 8 leds cuando el valor lógico sea 1. El apagado de cada uno de los 8 leds debe ser inmediatamente después de colocar la respectiva posición del DIP switch en valor lógico 0.
 
 <div align="center">
-<img src="image-3.png" alt="Ejercicio 1"/>
+<img src="image-3.png" alt="Ejemplo 2"/>
 <br>
 <figcaption>Fuente: Autor</figcaption>
 </div>
