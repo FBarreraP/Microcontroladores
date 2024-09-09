@@ -6,9 +6,11 @@ Esta clase consiste en comprender los recursos del PIC 18F4550, así mismo, cono
 
 Es una señal de reloj usado para sincronizar acciones de diferentes entradas, salidas y operaciones de un circuito digital. Esta señal oscila entre estados de altos y bajos.
 
-![Clock](image.png)
-
-Fuente: https://www.drouiz.com/blog/2015/05/26/flancos-de-subida-y-bajada-con-arduino/
+<div align="center">
+<img src="Imagenes/image.png" alt="Clock"/>
+<br>
+<figcaption>Fuente: https://www.drouiz.com/blog/2015/05/26/flancos-de-subida-y-bajada-con-arduino/</figcaption>
+</div>
 
 <h2>Ciclo de máquina</h2>
 
@@ -21,9 +23,11 @@ Q2: Lectura del dato
 Q3: Procesa el dato
 Q4: Escribe el dato
 
-![Ciclos de máquina](image-1.png)
-
-Fuente: https://http://apuntes-electronicos.blogspot.com/2013/02/caracteristicas-generales-del-pic-16f877.html
+<div align="center">
+<img src="Imagenes/image-1.png" alt="Ciclos de máquina"/>
+<br>
+<figcaption>Fuente: https://http://apuntes-electronicos.blogspot.com/2013/02/caracteristicas-generales-del-pic-16f877.html</figcaption>
+</div>
 
 <h2>RAM</h2>
 
@@ -43,21 +47,27 @@ Tiene las ventajas de una memoria ROM y RAM. Guarda el programa (líneas de inst
 
 El PIC 18F4550 es un microcontrolador PIC (Peripheral Interface Controller) de 40 pines de la familia de 8 bits de Microchip. La CPU es de tipo RISC, el cual ofrece alta velocidad de procesamiento mayor a 10 MIPs (40MHz).
 
-![PIC](image-4.png)
-
-Fuente: Datasheet
+<div align="center">
+<img src="Imagenes/image-4.png" alt="PIC"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
 
 Características especiales:
 - 100.000 ciclos de borrado/escritura de datos en la memoria FLASH
 - 1.000.000 ciclos de borrado/escritura de datos en la memoria EEPROM
 
-![Memorias PIC](image-2.png)
+<div align="center">
+<img src="Imagenes/image-2.png" alt="Memorias PIC"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
 
-Fuente: Datasheet
-
-![Características PIC](image-3.png)
-
-Fuente: Datasheet
+<div align="center">
+<img src="Imagenes/image-3.png" alt="Características PIC"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
 
 <h3>Pines PIC</h3>
 
@@ -75,17 +85,21 @@ Fuente: Datasheet
 
 - 2 pines de Clock *
 
-![Pines PIC](image-5.png)
-
-Fuente: Datasheet
+<div align="center">
+<img src="Imagenes/image-5.png" alt="Pines PIC"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
 
 <h3>Oscilador PIC</h3>
 
-![Clock PIC](image-6.png)
-
-![Crystal externo PIC](image-7.png)
-
-Fuente: Datasheet
+<div align="center">
+<img src="Imagenes/image-6.png" alt="Crystal externo PIC"/>
+<br>
+<img src="Imagenes/image-7.png" alt="Capacitores crystal externo PIC"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
 
 <h4>Periféricos</h4>
 
@@ -97,9 +111,11 @@ Fuente: Datasheet
 - 4 timers (3 de 16 bits y 1 de 8 bits)
 - 2 modulos de PWM
 
-![Periféricos PIC](image-8.png)
-
-Fuente: Datasheet PIC 18F4550
+<div align="center">
+<img src="Imagenes/image-8.png" alt="Periféricos PIC"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
 
 <h4>Resets</h4>
 
@@ -117,14 +133,20 @@ El reset es utilizado para restablecer las condiciones conocidas de un proyecto.
 
 El PIC Kit 3 es un hardware que permite programar los microcontroladores de Microchip. Además, entre sus funciones está la depuración (debugging) del código.
 
-![PIC kit 3.0](image-9.png)
+<div align="center">
+<img src="Imagenes/image-9.png" alt="PIC kit 3.0"/>
+<br>
+<figcaption>Fuente: Datasheet PIC kit 3.0</figcaption>
+</div>
 
-Fuente: Datasheets PIC kit 3.0
+<div align="center">
+<img src="Imagenes/image-10.png" alt="Pines PIC y PIC kit"/>
+<br>
+<figcaption>Fuente: Datasheets PIC 18F4550 y PIC kit 3.0</figcaption>
+</div>
 
-![Pines PIC y PIC kit](image-10.png)
-
-Fuente: Datasheets PIC 18F4550 y PIC kit 3.0
-
-![Conexiones PIC y PIC kit](image-11.png)
-
-Fuente: Datasheets PIC kit 3.0
+<div align="center">
+<img src="Imagenes/image-11.png" alt="Conexiones PIC y PIC kit"/>
+<br>
+<figcaption>Fuente: Datasheet PIC kit 3.0</figcaption>
+</div>
