@@ -6,49 +6,63 @@ Esta clase consiste en comprender el manejo de puertos a través de los registro
 
 Una salida digital consiste en proporcionar un valor, ya sea 1 (Vcc) o 0 (Gnd); esto puede ser conseguido a través de un dispositivo programado.
 
-![Señal digital](image.png)
-
-Fuente: http://revistafeel.com.mx/feel-listen/diferencia-entre-senal-analogica-y-senal-digital/attachment/ejercicio-digital/#
+<div align="center">
+<img src="Imagenes/image.png" alt="Señal digital"/>
+<br>
+<figcaption>Fuente: http://revistafeel.com.mx/feel-listen/diferencia-entre-senal-analogica-y-senal-digital/attachment/ejercicio-digital/#</figcaption>
+</div>
 
 <h3>TRIS, LAT, PORT</h3>
 
 Son registros internos de los microcontroladores, con los cuales cada puerto puede ser configurado de diferente forma, deseando el tipo de conexión (entrada o salida). Por tanto, cada puerto tiene tres registradores para su operación, TRIS (1=entrada / 0=salida), LAT y PORT.
 
-![TRIS, LAT y PORT](image-1.png)
+<div align="center">
+<img src="Imagenes/image-1.png" alt="TRIS, LAT y PORT"/>
+<br>
+<figcaption>Fuente: https://electrosome.com/getting-started-pic-18f-microcontroller/</figcaption>
+</div>
 
-![PIC](image-2.png)
-
-Fuente: Datasheet 18F4550
-
-![Puerto A](image-3.png)
-
-![Puerto B](image-4.png)
-
-![Puerto C](image-5.png)
-
-![Puerto D](image-6.png)
-
-![Puerto E](image-7.png)
-
-Fuente: Datasheet 18F4550
+<div align="center">
+<img src="Imagenes/image-2.png" alt="PIC 18F4550"/>
+<br>
+<img src="Imagenes/image-3.png" alt="Puerto A"/>
+<br>
+<img src="Imagenes/image-4.png" alt="Puerto B"/>
+<br>
+<img src="Imagenes/image-5.png" alt="Puerto C"/>
+<br>
+<img src="Imagenes/image-6.png" alt="Puerto D"/>
+<br>
+<img src="Imagenes/image-7.png" alt="Puerto E"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
 
 <h3>OSCCON</h3>
 
 Es un registro del PIC 18F4550 que permite configurar el oscilador interno.
 
-![OSCCON](image-8.png)
-
-![bits OSCCON](image-9.png)
+<div align="center">
+<img src="Imagenes/image-8.png" alt="OSCCON"/>
+<br>
+<img src="Imagenes/image-9.png" alt="bits OSCCON"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
 
 <h3>ADCON1</h3>
 
 Es un registro del ADC del PIC 18F4550 que permite definir cuales pines del puerto A, B  y E son digitales o análogos.
 
-![ADCON1](image-10.png)
+<div align="center">
+<img src="Imagenes/image-10.png" alt="ADCON1"/>
+<br>
+<img src="Imagenes/image-11.png" alt="bits ADCON1"/>
+<br>
+<figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
+</div>
 
-![bits ADCON1](image-11.png)
-
-<h3>Ejercicio 1</h3>
+<h3>Ejemplo 1</h3>
 
 Encender y apagar los leds en cada uno de los pines de cada uno de los puertos (A=6, B=8, C=7, D=8 y E=3) del PIC 18F4550 con un tiempo de espera de 0.2s entre cada paso de la siguiente secuencia:
 
@@ -63,7 +77,11 @@ Encender y apagar los leds en cada uno de los pines de cada uno de los puertos (
 9. Encender leds del puerto E
 10. Apagar leds del puerto E
 
-![Ejercicio 1](image-12.png)
+<div align="center">
+<img src="Imagenes/image-12.png" alt="Ejemplo 1"/>
+<br>
+<figcaption>Fuente: Autor</figcaption>
+</div>
 
 ```c
 #include <xc.h>
@@ -109,11 +127,15 @@ void main(void) {
 }
 ```
 
-<h3>Ejercicio 2</h3>
+<h3>Ejemplo 2</h3>
 
 A partir del ejercicio 1, encender los dos leds más significativos y realizar desplazamiento a la derecha; hasta que uno de los dos leds llegue al bit menos significativo (LSB) realizar desplazamiento a la izquierda, hasta que uno de los dos leds llegue al bit más significativo (MSB).
 
-![Ejercicio 2](image-13.png)
+<div align="center">
+<img src="Imagenes/image-13.png" alt="Ejemplo 2"/>
+<br>
+<figcaption>Fuente: Autor</figcaption>
+</div>
 
 ```c
 #include <xc.h>
