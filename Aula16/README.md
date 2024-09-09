@@ -6,33 +6,53 @@ Esta clase consiste en comprender las configruraciones del datasheet de la panta
 
 La pantalla LCD (Liquid Crystal Display) es delgada y plana, formada por un número de píxeles en color o monocromáticos posicionados delante de una fuente de luz (reflector).
 
-![LCD layers](Imagenes/image-2.png)
-
-Fuente: https://es.wikipedia.org/wiki/Pantalla_de_cristal_l%C3%ADquido
+<div align="center">
+<img src="Imagenes/image-2.png" alt="LCD layers"/>
+<br>
+<figcaption>Fuente: https://es.wikipedia.org/wiki/Pantalla_de_cristal_l%C3%ADquido</figcaption>
+</div>
 
 Las pantallas LCD son elementos alfanuméricos que se utilizan como salidas en los sistemas electrónicos, con el objetivo principal de visualizar información, a través de código ASCII. Existen diferentes tipos de pantallas LCD (16x2, 20x2, 16x4, 20x4, entre otras).
 
-![LCD 16x2](Imagenes/image-7.png)
+<div align="center">
+<img src="Imagenes/image-7.png" alt="LCD 16x2"/>
+<br>
+<img src="Imagenes/image-3.png" alt="LCD 20x4"/>
+<br>
+<figcaption>Fuente: http://www.panadisplay.com/monochrome-lcd/monochrome-cog-cog-lcd/arduino-20x2-lcd-module-display.html</figcaption>
+</div>
 
-Fuente: 
+<div align="center">
+<img src="Imagenes/image-5.png" alt="LCD"/>
+<br>
+<figcaption>Fuente: http://micropinguino.blogspot.com/2013/04/manejo-pantalla-lcd-1602-con-el.html</figcaption>
+</div>
 
-![LCD 20x4](Imagenes/image-3.png)
+<div align="center">
+<img src="Imagenes/image-6.png" alt="5x8 dot y 5x10 dot"/>
+<br>
+<figcaption>Fuente: </figcaption>
+</div>
 
-Fuente: http://www.panadisplay.com/monochrome-lcd/monochrome-cog-cog-lcd/arduino-20x2-lcd-module-display.html
-
-![LCD](Imagenes/image-5.png)
-
-Fuente: http://micropinguino.blogspot.com/2013/04/manejo-pantalla-lcd-1602-con-el.html
-
-![5x8 dot y 5x10 dot](Imagenes/image-6.png)
-
-![Conexiones LCD](Imagenes/image-4.png)
+<div align="center">
+<img src="Imagenes/image-4.png" alt="Conexiones LCD"/>
+<br>
+<figcaption>Fuente: </figcaption>
+</div>
 
 La LCD debe ser configurada a través de algunos registros específicos
 
-![Configuración y datos LCD](Imagenes/image-8.png)
+<div align="center">
+<img src="Imagenes/image-8.png" alt="Configuración y datos LCD"/>
+<br>
+<figcaption>Fuente: </figcaption>
+</div>
 
-![Registros LCD](Imagenes/image-9.png)
+<div align="center">
+<img src="Imagenes/image-9.png" alt="Registros LCD"/>
+<br>
+<figcaption>Fuente: </figcaption>
+</div>
 
 La LCD tiene dos memorias, la DDRAM y la CGRAM para almacenar información
 
@@ -40,27 +60,47 @@ La LCD tiene dos memorias, la DDRAM y la CGRAM para almacenar información
 
 La memoria DDRAM contiene todas las posiciones del display de la LCD, en las cuales se mostrará la información. Las posiciones iniciales para la fila 1 y la fila 2 son 0x80 y 0xC0, respectivamente.
 
-![DDRAM](Imagenes/image-10.png)
+<div align="center">
+<img src="Imagenes/image-10.png" alt="DDRAM"/>
+<br>
+<figcaption>Fuente: </figcaption>
+</div>
 
 <h3>CGRAM</h3>
 
 La memoria CGRAM guarda todos los caracteres posibles que se pueden imprimir en la LCD, sin embargo, también tiene 8 espacios de memoria para guardar caracteres personalizables, los cuales se pueden crear a mano o por medio de la siguiente página: https://omerk.github.io/lcdchargen/
 
-![CGRAM](Imagenes/image-11.png)
+<div align="center">
+<img src="Imagenes/image-11.png" alt="CGRAM"/>
+<br>
+<figcaption>Fuente: </figcaption>
+</div>
 
 Para guardar o escribir los caracteres en la LCD, las posiciones de memoria son 0x40, 0x48, 0x50, 0x58, 0x60, 0x68, 0x70 y 0x78. 
 
-![CGRAM1](Imagenes/image-12.png)
+<div align="center">
+<img src="Imagenes/image-12.png" alt="CGRAM1"/>
+<br>
+<figcaption>Fuente: </figcaption>
+</div>
 
 Para cargar o leer los caracteres de la LCD, las posiciones de memoria son 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06 y 0x07.
 
-![CGRAM displayed LCD](Imagenes/image-13.png)
+<div align="center">
+<img src="Imagenes/image-13.png" alt="CGRAM displayed LCD"/>
+<br>
+<figcaption>Fuente: </figcaption>
+</div>
 
-<h3>Ejercicio 1</h3>
+<h3>Ejemplo 1</h3>
 
 Utilizar una pantalla LCD 16x2 (con 8 bits) para visualizar en la primera fila el nombre del estudiante a través de una interrupción externa de flanco de bajada.
 
-![LCD 8 bits](Imagenes/image.png)
+<div align="center">
+<img src="Imagenes/image.png" alt="Ejemplo 1"/>
+<br>
+<figcaption>Fuente: </figcaption>
+</div>
 
 Programación de la LCD a 8 bits
 
@@ -189,11 +229,15 @@ void DisplayShiftLeft(void){
 }
 ```
 
-<h3>Ejercicio 2</h3>
+<h3>Ejemplo 2</h3>
 
 Utilizar una pantalla LCD 16x2 (con 4 bits) para visualizar en la primera fila el nombre del estudiante a través de una interrupción externa de flanco de bajada.
 
-![LCD 4 bits](Imagenes/image-1.png)
+<div align="center">
+<img src="Imagenes/image-1.png" alt="Ejemplo 2"/>
+<br>
+<figcaption>Fuente: </figcaption>
+</div>
 
 Programación de la LCD a 4 bits
 
