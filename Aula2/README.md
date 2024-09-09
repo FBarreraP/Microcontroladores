@@ -6,9 +6,17 @@ Esta clase consiste en realizar un repaso de programación en C
 
 Una variable es una posición en memoria a la que se le asigna un nombre, la cual sirve para guardar una información (números o datos). Los tipos de variables son globales y locales. Una constante es un espacio de memoria reservado para un valor fijo y que no se modificará.
 
-![Variables de tipo entero](Imagenes/image.png)
+<div align="center">
+<img src="Imagenes/image.png" alt="Variables de tipo entero"/>
+<br>
+<figcaption>Fuente: MPLAB® XC8 C Compiler User’s Guide</figcaption>
+</div>
 
-![Variables de tipo flotante](Imagenes/image-1.png)
+<div align="center">
+<img src="Imagenes/image-1.png" alt="Variables de tipo flotante"/>
+<br>
+<figcaption>Fuente: MPLAB® XC8 C Compiler User’s Guide</figcaption>
+</div>
 
 <h2>Tipos de datos</h2>
 
@@ -44,7 +52,12 @@ uint16_t p = 0xF15E;
 int32_t q = 0x0000FFFF;
 uint64_t r = 0x0000000000000001;
 ```
-![int4_t y uint4_t](Imagenes/image-2.png)
+
+<div align="center">
+<img src="Imagenes/image-2.png" alt="int4_t y uint4_t"/>
+<br>
+<figcaption>Fuente: Autor</figcaption>
+</div>
 
 <h2>Operaciones</h2>
 
@@ -52,7 +65,11 @@ uint64_t r = 0x0000000000000001;
 
 Suma (+), Resta (-), Multiplicación (*), División (/) y Módulo (%).
 
-![División](Imagenes/image-3.png)
+<div align="center">
+<img src="Imagenes/image-3.png" alt="División"/>
+<br>
+<figcaption>Fuente: Autor</figcaption>
+</div>
 
 <h3>Operaciones lógicas</h3> 
 
