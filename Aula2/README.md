@@ -329,7 +329,11 @@ int num2[3][2] = {{22, 3},
                   {81, 1492}};
 ```
 
-![Arreglos con index](Imagenes/image-4.png)
+<div align="center">
+<img src="Imagenes/image-4.png" alt="Arreglos con index"/>
+<br>
+<figcaption>Fuente: Autor</figcaption>
+</div>
 
 Los arreglos (arrays) permiten almacenar y obtener información en una única variable utilizando un índice (<i>index</i>), siendo el índice '0' la posición inicial de los vectores y matrices.
 
