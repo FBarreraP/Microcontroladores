@@ -6,25 +6,43 @@ Esta clase consiste en realizar un repaso de conversión de bases numéricas, op
 
 Las bases numéricas son sistemas de numeración que permiten representar información de diferentes maneras.
 
-![Bases numéricas](image.png)
+<div align="center">
+<img src="Imagenes/image.png" alt="Bases numéricas"/>
+<br>
+<figcaption>Fuente: Autor</figcaption>
+</div>
 
 Cada caracter tiene una representación de 8 bits de acuerdo al Código Estándar Estadounidense para el Intercambio de Información (ASCII).
 
-![ASCII](image-1.png)
+<div align="center">
+<img src="Imagenes/image-1.png" alt="ASCII"/>
+<br>
+<figcaption>Fuente: </figcaption>
+</div>
 
 Los números binarios tienen dos bits de referencia, el bit menos significativo (LSB) y el más significativo (MSB), los cuales son nombrados de acuerdo a su peso o a su valor binario.
 
-![LSB y MSB](image-2.png)
+<div align="center">
+<img src="Imagenes/image-2.png" alt="LSB y MSB"/>
+<br>
+<figcaption>Fuente: </figcaption>
+</div>
 
 Fuente: https://knowthecode.io/labs/basics-of-digitizing-data/episode-5
 
-![Nomenclatura binaria](image-3.png)
+<div align="center">
+<img src="Imagenes/image-3.png" alt="Nomenclatura binaria"/>
+<br>
+<figcaption>Fuente: </figcaption>
+</div>
 
 <h3>Binario a Decimal</h3>
 
-![bin2dec](image-4.png)
-
-Fuente: https://calculareconverter.com.br/binario-para-decimal/
+<div align="center">
+<img src="Imagenes/image-4.png" alt="bin2dec"/>
+<br>
+<figcaption>Fuente: https://calculareconverter.com.br/binario-para-decimal/</figcaption>
+</div>
 
 <h4>Ejercicios</h4>
 
@@ -38,9 +56,11 @@ Fuente: https://calculareconverter.com.br/binario-para-decimal/
 
 <h3>Decimal a Binario</h3>
 
-![dec2bin](image-5.png)
-
-Fuente: https://calculareconverter.com.br/converter-decimal-para-binario/
+<div align="center">
+<img src="Imagenes/image-5.png" alt="dec2bin"/>
+<br>
+<figcaption>Fuente: https://calculareconverter.com.br/binario-para-decimal/</figcaption>
+</div>
 
 <h4>Ejercicios</h4>
 
@@ -54,9 +74,11 @@ Fuente: https://calculareconverter.com.br/converter-decimal-para-binario/
 
 <h3>Hexadecimal a Decimal</h3>
 
-![hex2dec](image-6.png)
-
-Fuente: https://calculareconverter.com.br/converter-decimal-para-hexadecimal/
+<div align="center">
+<img src="Imagenes/image-6.png" alt="hex2dec"/>
+<br>
+<figcaption>Fuente: https://calculareconverter.com.br/binario-para-decimal/</figcaption>
+</div>
 
 <h4>Ejercicios</h4>
 
@@ -70,9 +92,11 @@ Fuente: https://calculareconverter.com.br/converter-decimal-para-hexadecimal/
 
 <h3>Decimal a Hexadecimal</h3>
 
-![dec2hex](image-7.png)
-
-Fuente: https://cual-es-mi-ip.online/herramientas/conversores-numericos/conversor-decimal-a-hexadecimal/
+<div align="center">
+<img src="Imagenes/image-7.png" alt="dec2hex"/>
+<br>
+<figcaption>Fuente: https://cual-es-mi-ip.online/herramientas/conversores-numericos/conversor-decimal-a-hexadecimal/</figcaption>
+</div>
 
 <h4>Ejercicios</h4>
 
@@ -86,9 +110,11 @@ Fuente: https://cual-es-mi-ip.online/herramientas/conversores-numericos/converso
 
 <h3>Octal a Binario</h3>
 
-![oct2bin](image-8.png)
-
-Fuente: https://cual-es-mi-ip.online/herramientas/conversores-numericos/conversor-octal-a-binario/
+<div align="center">
+<img src="Imagenes/image-8.png" alt="oct2bin"/>
+<br>
+<figcaption>Fuente: https://cual-es-mi-ip.online/herramientas/conversores-numericos/conversor-octal-a-binario/</figcaption>
+</div>
 
 <h4>Ejercicios</h4>
 
@@ -102,9 +128,11 @@ Fuente: https://cual-es-mi-ip.online/herramientas/conversores-numericos/converso
 
 <h3>Binario a Octal</h3>
 
-![bin2oct](image-9.png)
-
-Fuente: https://cual-es-mi-ip.online/herramientas/conversores-numericos/conversor-binario-a-octal/
+<div align="center">
+<img src="Imagenes/image-9.png" alt="bin2oct"/>
+<br>
+<figcaption>Fuente: https://cual-es-mi-ip.online/herramientas/conversores-numericos/conversor-binario-a-octal/</figcaption>
+</div>
 
 <h4>Ejercicios</h4>
 
@@ -118,9 +146,11 @@ Fuente: https://cual-es-mi-ip.online/herramientas/conversores-numericos/converso
 
 <h3>Decimal a Octal</h3>
 
-![dec2oct](image-10.png)
-
-Fuente: https://calculareconverter.com.br/converter-decimal-para-octal/
+<div align="center">
+<img src="Imagenes/image-10.png" alt="dec2oct"/>
+<br>
+<figcaption>Fuente: https://calculareconverter.com.br/converter-decimal-para-octal/</figcaption>
+</div>
 
 <h4>Ejercicios</h4>
 
@@ -134,9 +164,11 @@ Fuente: https://calculareconverter.com.br/converter-decimal-para-octal/
 
 <h3>Octal a Decimal</h3>
 
-![oct2dec](image-11.png)
-
-Fuente: https://calculareconverter.com.br/converter-octal-para-decimal/
+<div align="center">
+<img src="Imagenes/image-11.png" alt="oct2dec"/>
+<br>
+<figcaption>Fuente: https://calculareconverter.com.br/converter-octal-para-decimal/</figcaption>
+</div>
 
 <h4>Ejercicios</h4>
 
@@ -150,9 +182,11 @@ Fuente: https://calculareconverter.com.br/converter-octal-para-decimal/
 
 <h3>Hexadecimal a Octal</h3>
 
-![hex2oct](image-12.png)
-
-Fuente: https://cual-es-mi-ip.online/herramientas/conversores-numericos/conversor-hexadecimal-a-octal/
+<div align="center">
+<img src="Imagenes/image-12.png" alt="hex2oct"/>
+<br>
+<figcaption>Fuente: https://cual-es-mi-ip.online/herramientas/conversores-numericos/conversor-hexadecimal-a-octal/</figcaption>
+</div>
 
 <h4>Ejercicios</h4>
 
@@ -166,9 +200,11 @@ Fuente: https://cual-es-mi-ip.online/herramientas/conversores-numericos/converso
 
 <h3>Octal a Hexadecimal</h3>
 
-![oct2hex](image-13.png)
-
-Fuente: https://cual-es-mi-ip.online/herramientas/conversores-numericos/conversor-octal-a-hexadecimal/
+<div align="center">
+<img src="Imagenes/image-13.png" alt="oct2hex"/>
+<br>
+<figcaption>Fuente: https://cual-es-mi-ip.online/herramientas/conversores-numericos/conversor-octal-a-hexadecimal/</figcaption>
+</div>
 
 <h4>Ejercicios</h4>
 
@@ -182,9 +218,11 @@ Fuente: https://cual-es-mi-ip.online/herramientas/conversores-numericos/converso
 
 <h2>Compuertas lógicas</h2>
 
-![compuertas](image-14.png)
-
-Fuente: https://sites.google.com/site/arquitecturadecomputadora215/electronica-digital-componentes-logicos
+<div align="center">
+<img src="Imagenes/image-14.png" alt="compuertas"/>
+<br>
+<figcaption>Fuente: https://sites.google.com/site/arquitecturadecomputadora215/electronica-digital-componentes-logicos</figcaption>
+</div>
 
 <h2>Bitwise</h2>
 
@@ -192,9 +230,11 @@ Las operaciones bitwise son aquellas que permiten realizar operaciones bit a bit
 
 <h3>AND</h3>
 
-![AND](image-15.png)
-
-Fuente: https://www.programiz.com/c-programming/bitwise-operators
+<div align="center">
+<img src="Imagenes/image-15.png" alt="AND"/>
+<br>
+<figcaption>Fuente: https://www.programiz.com/c-programming/bitwise-operators</figcaption>
+</div>
 
 ```c
 #include <stdio.h>
@@ -208,9 +248,11 @@ int main(){
 
 <h3>OR</h3>
 
-![OR](image-16.png)
-
-Fuente: https://www.programiz.com/c-programming/bitwise-operators
+<div align="center">
+<img src="Imagenes/image-16.png" alt="OR"/>
+<br>
+<figcaption>Fuente: https://www.programiz.com/c-programming/bitwise-operators</figcaption>
+</div>
 
 ```c
 #include <stdio.h>
@@ -224,9 +266,11 @@ int main(){
 
 <h3>XOR</h3>
 
-![XOR](image-17.png)
-
-Fuente: https://www.programiz.com/c-programming/bitwise-operators
+<div align="center">
+<img src="Imagenes/image-17.png" alt="XOR"/>
+<br>
+<figcaption>Fuente: https://www.programiz.com/c-programming/bitwise-operators</figcaption>
+</div>
 
 ```c
 #include <stdio.h>
@@ -240,9 +284,11 @@ int main(){
 
 <h3>NOT</h3>
 
-![NOT](image-18.png)
-
-Fuente: https://www.programiz.com/c-programming/bitwise-operators
+<div align="center">
+<img src="Imagenes/image-18.png" alt="NOT"/>
+<br>
+<figcaption>Fuente: https://www.programiz.com/c-programming/bitwise-operators</figcaption>
+</div>
 
 ```c
 #include <stdio.h>
@@ -259,21 +305,27 @@ int main(){
 
 <h3>Corrimientos a la derecha</h3>
 
-![ShiftRight](image-19.png)
-
-Fuente: https://www.programiz.com/c-programming/bitwise-operators
+<div align="center">
+<img src="Imagenes/image-19.png" alt="ShiftRight"/>
+<br>
+<figcaption>Fuente: https://www.programiz.com/c-programming/bitwise-operators</figcaption>
+</div>
 
 <h3>Corrimientos a la izquierda</h3>
 
-![ShiftLeft](image-20.png)
-
-Fuente: https://www.programiz.com/c-programming/bitwise-operators
+<div align="center">
+<img src="Imagenes/image-20.png" alt="ShiftLeft"/>
+<br>
+<figcaption>Fuente: https://www.programiz.com/c-programming/bitwise-operators</figcaption>
+</div>
 
 <h3>Combinación de corrimientos</h3>
 
-![Shifts](image-21.png)
-
-Fuente: https://www.programiz.com/c-programming/bitwise-operators
+<div align="center">
+<img src="Imagenes/image-21.png" alt="Shifts"/>
+<br>
+<figcaption>Fuente: https://www.programiz.com/c-programming/bitwise-operators</figcaption>
+</div>
 
 ```c
 #include <stdio.h>
