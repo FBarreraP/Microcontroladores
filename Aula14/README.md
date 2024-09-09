@@ -7,7 +7,7 @@ Esta clase consiste en comprender las conexiones y las visualización dinámica 
 Las matrices de leds son arreglos de 64 leds, los cuales se conectan en 8 filas y 8 columnas, a través de cátodos o ánodos comunes.
 
 <div align="center">
-<img src="image.png" alt="Matriz de leds 8x8"/>
+<img src="Imagenes/image.png" alt="Matriz de leds 8x8"/>
 <br>
 <figcaption>Fuente: https://programarfacil.com/blog/arduino-blog/matriz-led-arduino-max7219/</figcaption>
 <br>
@@ -16,7 +16,7 @@ Las matrices de leds son arreglos de 64 leds, los cuales se conectan en 8 filas 
 <h3>Ánodo/Cátodo común</h3>
 
 <div align="center">
-<img src="image-1.png" alt="Matriz de leds Ánodo/Cátodo común"/>
+<img src="Imagenes/image-1.png" alt="Matriz de leds Ánodo/Cátodo común"/>
 <br>
 <figcaption>Fuente: https://hetpro-store.com/TUTORIALES/matriz-leds-atmega-8/</figcaption>
 <br>
@@ -27,7 +27,7 @@ Las matrices de leds son arreglos de 64 leds, los cuales se conectan en 8 filas 
 Si aplican +5V y 0V en diferentes columnas y filas, respectivamente, se encenderán todos los leds que se intersecan en dichas columnas y filas.
 
 <div align="center">
-<img src="image-2.png" alt="Matriz de leds Cátodo común"/>
+<img src="Imagenes/image-2.png" alt="Matriz de leds Cátodo común"/>
 <br>
 <figcaption>Fuente: https://programarfacil.com/blog/arduino-blog/matriz-led-arduino-max7219/</figcaption>
 <br>
@@ -36,7 +36,7 @@ Si aplican +5V y 0V en diferentes columnas y filas, respectivamente, se encender
 Para mostrar figuras en las matrices de leds es necesario realizar un barrido por columnas o filas, es decir, solo se encenderá una columna o fila a la vez, los cual es conocido como visualización dinámica.
 
 <div align="center">
-<img src="image-3.png" alt="Visualización dinámica matriz de leds Cátodo común"/>
+<img src="Imagenes/image-3.png" alt="Visualización dinámica matriz de leds Cátodo común"/>
 <br>
 <figcaption>Fuente: https://programarfacil.com/blog/arduino-blog/matriz-led-arduino-max7219/</figcaption>
 <br>
@@ -47,39 +47,39 @@ Para mostrar figuras en las matrices de leds es necesario realizar un barrido po
 El MAX 7219 es un driver de salidas digitales para displays de 7 segmentos y matrices de leds de cátodo común, el cual utiliza SPI.
 
 <div align="center">
-<img src="image-4.png" alt="MAX7219"/>
+<img src="Imagenes/image-4.png" alt="MAX7219"/>
 <br>
 <figcaption>Fuente: https://programarfacil.com/blog/arduino-blog/matriz-led-arduino-max7219/</figcaption>
 <br>
 </div>
 
 <div align="center">
-<img src="image-5.png" alt="3 x MAX7219"/>
+<img src="Imagenes/image-5.png" alt="3 x MAX7219"/>
 <br>
 <figcaption>Fuente: https://programarfacil.com/blog/arduino-blog/matriz-led-arduino-max7219/</figcaption>
 <br>
 </div>
 
 <div align="center">
-<img src="image-6.png" alt="Circuito electrónico 3 x MAX7219"/>
+<img src="Imagenes/image-6.png" alt="Circuito electrónico 3 x MAX7219"/>
 <br>
 <figcaption>Fuente: https://programarfacil.com/blog/arduino-blog/matriz-led-arduino-max7219/</figcaption>
 <br>
 </div>
 
-<h3>Ejercicio 1</h3>
+<h3>Ejemplo</h3>
 
 Utilizar un pulsador (interrupción de flanco de bajada) para mostrar la letra F en una matriz de leds de 8x8 (ánodo o cátodo común).
 
 <div align="center">
-<img src="image-7.png" alt="Ejercicio 1"/>
+<img src="Imagenes/image-7.png" alt="Ejercicio 1"/>
 <br>
 <figcaption>Fuente: Autor</figcaption>
 <br>
 </div>
 
 <div align="center">
-<img src="image-8.png" alt="Ejercicio 1 Proteus"/>
+<img src="Imagenes/image-8.png" alt="Ejercicio 1 Proteus"/>
 <br>
 <figcaption>Fuente: Autor</figcaption>
 <br>
