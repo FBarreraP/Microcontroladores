@@ -112,7 +112,6 @@ Es un registro del PIC 18F4550 controla la operación del modulo ADC.
 
 Utilizar una pantalla LCD 16x2 para visualizar en la primera fila la tensión de entrada en el microcontrolador (entrada análoga) a partir de un potenciómetro. Además visualizar la salida digital de los 10 bits en leds en diferentes puertos.
 
-![alt text](image-14.png)
 <div align="center">
 <img src="Imagenes/image-14.png" alt="ADC"/>
 <br>
