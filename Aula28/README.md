@@ -21,7 +21,7 @@ Una modulación por ancho de pulso (PWM) se caracteriza por una señal que tiene
 La variación de una señal PWM consiste la variación desde 0% hasta 100% en el ciclo útil de dicha señal, por tanto, es posible obtener diferentes valores de salida de voltaje de manera proporcional al valor máximo de voltaje.
 
 <div align="center">
-<img src="image.png" alt="PWMs"/>
+<img src="Imagenes/image.png" alt="PWMs"/>
 <br>
 <figcaption>Fuente: https://arduinokitproject.com/l298n-dc-stepper-driver-arduino-tutorial/</figcaption>
 </div>
@@ -31,7 +31,7 @@ La variación de una señal PWM consiste la variación desde 0% hasta 100% en el
 En el PIC 18F4550 hay dos módulos CCP (capturar, comparar y PWM), los cuales tienen una resolución de 10 bits. Además, es necesario una referencia de tiempos que es proporcionada por el temporizador 2 (TMR2).
 
 <div align="center">
-<img src="image-1.png" alt="Señal PWM"/>
+<img src="Imagenes/image-1.png" alt="Señal PWM"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
@@ -47,7 +47,7 @@ Para configurar el PWM en el PIC18F4550 es necesario tener en cuenta los siguien
 Son dos módulos del PIC 18F4550 que permiten capturar, comparar y/o generar PWM.
 
 <div align="center">
-<img src="image-2.png" alt="PWMs en el PIC 18F4550"/>
+<img src="Imagenes/image-2.png" alt="PWMs en el PIC 18F4550"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
@@ -57,7 +57,7 @@ Son dos módulos del PIC 18F4550 que permiten capturar, comparar y/o generar PWM
 Es un registro del módulo TMR2 de 8 bits (0 a 255) que permite configurar el periodo de la señal PWM.
 
 <div align="center">
-<img src="image-3.png" alt="Cálculo PR2"/>
+<img src="Imagenes/image-3.png" alt="Cálculo PR2"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
@@ -67,7 +67,7 @@ Es un registro del módulo TMR2 de 8 bits (0 a 255) que permite configurar el pe
 El modulo CCP1 es de 16 bits configurado por CCPR1H y CCPR1L, donde CCPR1L es usado para definir el ciclo útil (duty cycle) del PWM, y CCPR1H no es usado para el PWM.
 
 <div align="center">
-<img src="image-4.png" alt="10 bits PWM"/>
+<img src="Imagenes/image-4.png" alt="10 bits PWM"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
@@ -75,7 +75,7 @@ El modulo CCP1 es de 16 bits configurado por CCPR1H y CCPR1L, donde CCPR1L es us
 Es el registro que permite configurar el ciclo útil (duty cycle) del PWM, junto con los bits 4 y 5 de CCP1CON
 
 <div align="center">
-<img src="image-5.png" alt="CCPR1L y CCPxCON[5:4]"/>
+<img src="Imagenes/image-5.png" alt="CCPR1L y CCPxCON[5:4]"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
@@ -85,13 +85,13 @@ Es el registro que permite configurar el ciclo útil (duty cycle) del PWM, junto
 Es el registro del temporizador 2 (8 bits) del PIC 18F4550, el cual funciona por comparación con el registro PR2 (8 bits)
 
 <div align="center">
-<img src="image-6.png" alt="T2CON"/>
+<img src="Imagenes/image-6.png" alt="T2CON"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
 
 <div align="center">
-<img src="image-7.png" alt="bits T2CON"/>
+<img src="Imagenes/image-7.png" alt="bits T2CON"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
@@ -99,13 +99,13 @@ Es el registro del temporizador 2 (8 bits) del PIC 18F4550, el cual funciona por
 <h4>Paso 5 - CCPxCON</h4>
 
 <div align="center">
-<img src="image-8.png" alt="CCPxCON"/>
+<img src="Imagenes/image-8.png" alt="CCPxCON"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
 
 <div align="center">
-<img src="image-9.png" alt="bits CCPxCON"/>
+<img src="Imagenes/image-9.png" alt="bits CCPxCON"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
@@ -115,7 +115,7 @@ Es el registro del temporizador 2 (8 bits) del PIC 18F4550, el cual funciona por
 Obtener en la salida del PIC 18F4550 un ciclo útil fijo para PWM y visualizar el periodo de la señal en el osciloscopio, utilizando la salida CCP1 del módulo CCP.
 
 <div align="center">
-<img src="image-10.png" alt="Ejemplo 1"/>
+<img src="Imagenes/image-10.png" alt="Ejemplo 1"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
@@ -167,7 +167,7 @@ void setting(void){
 Utilizar una pantalla LCD 16x2 para visualizar el porcentaje de un ciclo útil; el cual debe variar de acuerdo al giro de un potenciómetro (entrada análoga), utilizando la salida CCP1 (RC2) del módulo CCP.
 
 <div align="center">
-<img src="image-11.png" alt="Ejemplo 2"/>
+<img src="Imagenes/image-11.png" alt="Ejemplo 2"/>
 <br>
 <figcaption>Fuente: Datasheet PIC 18F4550</figcaption>
 </div>
