@@ -141,7 +141,7 @@ Utilizar un PIC 18F4550 para realizar el reconocimiento y el contador de dos pul
 
 <h4>PIC transmisor</h4>
 
-```c
+```c++
 /*
 PIC 18F4550
 UART transmisor
@@ -229,7 +229,7 @@ void __interrupt() Tx(void) {
 
 <h4>PIC receptor</h4>
 
-```c
+```c++
 /*
 PIC 18F4550
 UART receptor
