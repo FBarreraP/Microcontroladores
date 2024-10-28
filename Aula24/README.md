@@ -83,14 +83,144 @@ El valor del registro TMR1 se puede calcular con respecto al tiempo de atraso (d
 
 Utilizar el temporizador TMR1 como interrupción en el PIC 18F4550 para generar una señal cuadrada con el tiempo máximo del temporizador teniendo un valor de prescaler de 1, así mismo, la salida de la señal debe ser visualizada en 8 leds conectados al puerto D.
 
-```c
+<div align="center">
+<img src="image-9.png" alt="Ejemplo1"/>
+<br>
+<figcaption>Fuente: Autor </figcaption>
+</div>
 
+```c
+/*
+PIC 18F4550
+TIMER1
+Author: Fabián Barrera Prieto
+Mestrado em Sistemas Mecatrônicos
+Created on 25 de Novembro de 2020, 06:34
+ */
+
+#include <xc.h>
+
+#pragma config FOSC = INTOSC_HS
+#pragma config WDT = OFF
+#pragma config LVP = OFF
+
+#define _XTAL_FREQ 8000000
+#define time 10
+//TIMER
+#define Prescale1_4 0xB0
+#define Prescale1_3 0xA0
+#define Prescale1_2 0x90
+#define Prescale1_1 0x80
+
+void settings(void);
+void start(void);
+void __interrupt() TMR1_pre(void);
+
+void main(void) {
+    settings();
+    while(1){
+
+    }
+}
+
+void settings(void){
+    OSCCON = 0x72;
+    ADCON1 = 15;
+    TRISD = 0;
+    LATD = 0;
+    //Habilitação da interrupção do TIMER 1
+    GIE = 1;
+    PEIE = 1;
+    TMR1IE = 1;
+    TMR1IF = 0;
+    //Configuração do TIMER1
+    T1CON = Prescale1_1;
+    TMR1 = 0;
+    TMR1ON = 1;
+}
+
+void __interrupt() TMR1_pre(void){
+    if(TMR1IF == 1){
+        TMR1 = 0;
+        LATD = ~LATD;
+        TMR1IF = 0;
+    }
+}
 ```
 
 <h3>Ejemplo 2</h3>
 
 Utilizar el temporizador TMR1 como interrupción en el PIC 18F4550 para generar una señal cuadrada con un tiempo establecido de 5ms, la salida de la señal debe ser visualizada en 8 leds conectados al puerto D.
 
-```c
+<div align="center">
+<img src="image-9.png" alt="Ejemplo2"/>
+<br>
+<figcaption>Fuente: Autor </figcaption>
+</div>
 
+```c
+/*
+PIC 18F4550
+TIMER1
+Author: Fabián Barrera Prieto
+Mestrado em Sistemas Mecatrônicos
+Created on 25 de Novembro de 2020, 06:34
+ */
+
+ /*
+ * File:   main.c
+ * Author: LENOVO
+ *
+ * Created on 25 de Novembro de 2020, 06:34
+ */
+
+#include <xc.h>
+
+#pragma config FOSC = INTOSC_HS
+#pragma config WDT = OFF
+#pragma config LVP = OFF
+
+#define _XTAL_FREQ 8000000
+#define time 10
+//TIMER
+#define Prescale1_4 0xB0
+#define Prescale1_3 0xA0
+#define Prescale1_2 0x90
+#define Prescale1_1 0x80
+
+
+void settings(void);
+void start(void);
+void __interrupt() TMR1_ISR(void);
+
+void main(void) {
+    settings();
+    while(1){
+
+    }
+}
+
+void settings(void){
+    OSCCON = 0x72;
+    ADCON1 = 15;
+    TRISD = 0;
+    LATD = 0;
+    //Habilitação da interrupção do TIMER 1
+    GIE = 1;
+    PEIE = 1;
+    TMR1IE = 1;
+    TMR1IF = 0;
+    //Configuração do TIMER1
+    T1CON = Prescale1_1;
+    TMR1 = 0xD8EF;
+    TMR1ON = 1;
+}
+
+void __interrupt() TMR1_ISR(void){
+    if(TMR1IF == 1){
+        TMR1 = 0xD8EF;
+        LATD = ~LATD;
+        TMR1IF = 0;
+    }
+}
 ```
