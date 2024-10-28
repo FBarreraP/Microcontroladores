@@ -167,13 +167,6 @@ Mestrado em Sistemas Mecatrônicos
 Created on 25 de Novembro de 2020, 06:34
  */
 
- /*
- * File:   main.c
- * Author: LENOVO
- *
- * Created on 25 de Novembro de 2020, 06:34
- */
-
 #include <xc.h>
 
 #pragma config FOSC = INTOSC_HS

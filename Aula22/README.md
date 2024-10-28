@@ -232,6 +232,66 @@ void __interrupt() Tx(void) {
 ```c
 /*
 PIC 18F4550
+TIMER1
+Author: Fabián Barrera Prieto
+Mestrado em Sistemas Mecatrônicos
+Created on 25 de Novembro de 2020, 06:34
+ */
+
+#include <xc.h>
+
+#pragma config FOSC = INTOSC_HS
+#pragma config WDT = OFF
+#pragma config LVP = OFF
+
+#define _XTAL_FREQ 8000000
+#define time 10
+//TIMER
+#define Prescale1_4 0xB0
+#define Prescale1_3 0xA0
+#define Prescale1_2 0x90
+#define Prescale1_1 0x80
+
+
+void settings(void);
+void start(void);
+void __interrupt() TMR1_ISR(void);
+
+void main(void) {
+    settings();
+    while(1){
+
+    }
+}
+
+void settings(void){
+    OSCCON = 0x72;
+    ADCON1 = 15;
+    TRISD = 0;
+    LATD = 0;
+    //Habilitação da interrupção do TIMER 1
+    GIE = 1;
+    PEIE = 1;
+    TMR1IE = 1;
+    TMR1IF = 0;
+    //Configuração do TIMER1
+    T1CON = Prescale1_1;
+    TMR1 = 0xD8EF;
+    TMR1ON = 1;
+}
+
+void __interrupt() TMR1_ISR(void){
+    if(TMR1IF == 1){
+        TMR1 = 0xD8EF;
+        LATD = ~LATD;
+        TMR1IF = 0;
+    }
+}
+```
+
+```c
+/*
+PIC 18F4550
 UART receptor
 Author: Fabián Barrera Prieto
 Mestrado em Sistemas Mecatrônicos
